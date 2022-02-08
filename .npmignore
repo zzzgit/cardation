@@ -17,6 +17,11 @@ package-lock.json
 .vscode
 test
 .rpt2_cache*
-.rts2_cache*/
+.rts2_cache*
 .DS_Store
 .husky
+src
+test
+*.config.js
+permission.sh
+.eslintrc.yml
