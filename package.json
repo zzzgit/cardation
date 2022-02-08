@@ -1,6 +1,6 @@
 {
 	"name": "cardation",
-	"version": "0.1.16",
+	"version": "0.1.17",
 	"type": "commonjs",
 	"description": "fundation of card games, card model",
 	"repository": {
