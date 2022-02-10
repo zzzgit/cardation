@@ -26,6 +26,9 @@ module.exports = {
 			verbosity: 3,
 			useTsconfigDeclarationDir: true,
 			clean: false,
+			tsconfigOverride: {
+				compilerOptions: {"module": "ESNext"},
+			},
 		}),
 	],
 

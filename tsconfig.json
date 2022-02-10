@@ -1,7 +1,7 @@
 {
 	"compilerOptions": {
 		"target": "ESNext",
-		"module": "ESNext",	// 運行rollup，只能設置ESNext
+		"module": "commonjs",	// 運行rollup，只能設置ESNext
 		"lib": ["esnext"],
 		"sourceMap": true,
 		"moduleResolution": "Node",
