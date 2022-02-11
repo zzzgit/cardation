@@ -1,5 +1,3 @@
-
-
 describe("game", () => {
 	test("index", () => {
 		return expect(Promise.resolve([2])).resolves.toHaveLength(1)
