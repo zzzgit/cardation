@@ -5,12 +5,12 @@
 		"lib": [
 			"esnext"
 		],
-		"sourceMap": true,
+		"sourceMap": false,
 		"moduleResolution": "Node",
 		"strictNullChecks": true,
 		"removeComments": true,
-		"emitDeclarationOnly": true,
 		"declaration": true,
+		"emitDeclarationOnly": true,
 		"outDir": "./built/lib/",
 		"declarationDir": "./built/t/",
 		"declarationMap": true,
@@ -40,7 +40,8 @@
 	"include": [
 		"src/**/*",
 		"rollup.config.js",
-		"commitlint.config.js",
-		"jest.config.js"
+		"commitlint.config.cjs",
+		"jest.config.js",
+		"test/*.spec.ts"
 	]
 }

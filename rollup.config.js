@@ -9,10 +9,10 @@ module.exports = {
 	input: path.resolve(__dirname, "./src/index.ts"),
 	output: {
 		file: path.resolve(__dirname, pkg.main),
-		format: "cjs",
+		format: "es",
 		name: "cardation",
 		banner: "/* eslint-disable */",
-		sourcemap: true,
+		// sourcemap: true,
 	},
 	plugins: [
 		// babel({
