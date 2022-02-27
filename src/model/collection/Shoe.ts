@@ -3,8 +3,8 @@ import Card from "../card/Card"
 import Collection from "./Collection"
 import Deck from "./Deck"
 import IShoe from "./IShoe"
+import samael from "samael"
 
-const samael = require("samael")
 
 class Shoe extends Collection implements IShoe {
 	private _decks_int:number = -1
