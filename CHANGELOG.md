@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.38](https://github.com/zzzgit/cardation/compare/v0.1.37...v0.1.38) (2022-02-27)
+
+
+### Bug Fixes
+
+* change the import manner of samael ([2529460](https://github.com/zzzgit/cardation/commit/252946050eef049d3c1e8ad1404596b5842f5cbd))
+
 ### [0.1.37](https://github.com/zzzgit/cardation/compare/v0.1.32...v0.1.37) (2022-02-27)
 
 ### [0.1.36](https://github.com/zzzgit/cardation/compare/v0.1.32...v0.1.36) (2022-02-27)
