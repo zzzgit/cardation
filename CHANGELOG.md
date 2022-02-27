@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.37](https://github.com/zzzgit/cardation/compare/v0.1.32...v0.1.37) (2022-02-27)
+
 ### [0.1.36](https://github.com/zzzgit/cardation/compare/v0.1.32...v0.1.36) (2022-02-27)
 
 ### [0.1.33](https://github.com/zzzgit/cardation/compare/v0.1.32...v0.1.33) (2022-02-27)
