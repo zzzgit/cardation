@@ -27,3 +27,4 @@ permission.sh
 .eslintrc.yml
 tsconfig.*
 .versionrc
+*.tsbuildinfo
