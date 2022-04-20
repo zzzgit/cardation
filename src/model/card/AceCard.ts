@@ -8,32 +8,32 @@ class AceCard extends SuitCard {
 
 	private _rank:number
 
-	private _score:number
+	private _point:number
 
-	constructor(suit: Suit, score?:number) {
+	constructor(suit: Suit, point?:number) {
 		super()
 		this._suit = suit
 		this._rank = 1
-		if (score === undefined) {
-			this._score = this._rank
+		if (point === undefined) {
+			this._point = this._rank
 		} else {
-			if (Number.isNaN(+score as any)) {
-				throw new CardError(`[AceCard][constructor]: score is expected to be a number but get the type ${typeof score}!`)
+			if (Number.isNaN(+point as any)) {
+				throw new CardError(`[AceCard][constructor]: point is expected to be a number but get the type ${typeof point}!`)
 			}
-			this._score = +score as any
+			this._point = +point as any
 		}
 	}
 
 	getCardId(): string {
-		return `${this._suit.getShortName()}${this._rank}.${this._score}`
+		return `${this._suit.getShortName()}${this._rank}.${this._point}`
 	}
 
-	getCardScore(): number {
-		return this._score
+	getPoint(): number {
+		return this._point
 	}
 
-	setCardScore(score: number): void {
-		this._score = score
+	setPoint(point: number): void {
+		this._point = point
 	}
 
 	getRank(): number {

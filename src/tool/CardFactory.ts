@@ -10,23 +10,23 @@ import RedJokerCard from "../model/card/RedJokerCard"
  * a tool which pass the parameters to constructor as is
  */
 const Factory = {
-	createAceCard(suit: Suit, score?: number): AceCard {
-		return new AceCard(suit, score)
+	createAceCard(suit: Suit, point?: number): AceCard {
+		return new AceCard(suit, point)
 	},
-	createNumberCard(suit: Suit, rank: number, score?:number): NumberCard {
-		return new NumberCard(suit, rank, score)
+	createNumberCard(suit: Suit, rank: number, point?:number): NumberCard {
+		return new NumberCard(suit, rank, point)
 	},
-	createFaceCard(suit: Suit, rank: number, score?:number): FaceCard {
-		return new FaceCard(suit, rank, score)
+	createFaceCard(suit: Suit, rank: number, point?:number): FaceCard {
+		return new FaceCard(suit, rank, point)
 	},
-	createBlackJokerCard(rank: number, score?: number): BlackJokerCard {
-		return new BlackJokerCard(rank, score)
+	createBlackJokerCard(rank: number, point?: number): BlackJokerCard {
+		return new BlackJokerCard(rank, point)
 	},
-	createRedJokerCard(rank: number, score?: number): RedJokerCard {
-		return new RedJokerCard(rank, score)
+	createRedJokerCard(rank: number, point?: number): RedJokerCard {
+		return new RedJokerCard(rank, point)
 	},
-	createBlackCard(score?: number): BlackCard {
-		return new BlackCard(score)
+	createBlackCard(point?: number): BlackCard {
+		return new BlackCard(point)
 	},
 }
 

@@ -5,36 +5,36 @@ import MarkerCard from "./MarkerCard"
 class BlackMarkerCard extends MarkerCard {
 	private _rank: number
 
-	private _score: number = 0
+	private _point: number = 0
 
-	constructor(score?: number) {
+	constructor(point?: number) {
 		super()
 		this._rank = 0
-		this._score = this._rank
-		if (score === undefined) {
-			this._score = this._rank
+		this._point = this._rank
+		if (point === undefined) {
+			this._point = this._rank
 		} else {
-			if (Number.isNaN(+score as any)) {
-				throw new CardError(`[BlackCard][constructor]: score is expected to be a number but get the type ${typeof score}!`)
+			if (Number.isNaN(+point as any)) {
+				throw new CardError(`[BlackCard][constructor]: point is expected to be a number but get the type ${typeof point}!`)
 			}
-			this._score = +score as any
+			this._point = +point as any
 		}
 	}
 
 	getCardId(): string {
-		return `b${this._rank}.${this._score}`
+		return `b${this._rank}.${this._point}`
 	}
 
-	getCardScore(): number {
-		return this._score
+	getPoint(): number {
+		return this._point
 	}
 
 	getRank(): number {
 		return this._rank
 	}
 
-	setCardScore(score: number): void {
-		this._score = score
+	setPoint(point: number): void {
+		this._point = point
 	}
 
 	toString(): string {

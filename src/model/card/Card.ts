@@ -11,13 +11,13 @@ abstract class Card {
 	 */
 	abstract getCardId(): string
 	/**
-	 * score varies in different games, positive only
+	 * point varies in different games, positive only
 	 */
-	abstract getCardScore(): number
+	abstract getPoint(): number
 	/**
-	 * set score according to the game while creating a deck
+	 * set point according to the game while creating a deck
 	 */
-	abstract setCardScore(score: number): void
+	abstract setPoint(point: number): void
 
 	equals(other:Card): boolean {
 		return this.getCardId() == other.getCardId()

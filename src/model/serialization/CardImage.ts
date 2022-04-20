@@ -8,7 +8,7 @@ class CardImage {
 
 	private _rank
 
-	private _score
+	private _point
 
 	constructor(id: string) {
 		const id_regexp = /^[a-zA-Z]\d{1,3}\.\d{1,4}$/
@@ -19,19 +19,19 @@ class CardImage {
 		const [firstPart] = info_array
 		const type: string = firstPart.slice(0, 1)
 		const rank: number = +firstPart.slice(1)
-		const score: number = +info_array[1]
+		const point: number = +info_array[1]
 		// if (suit.length !== 1) {
 		// 	throw new CardError(`[cardation][CardId]: suit shoulb be a single letter!`)
 		// }
 		// if (typeof rank != "number") {
 		// 	throw new CardError(`[cardation][CardId]: rank shoulb be a number!`)
 		// }
-		// if (typeof score != "number") {
-		// 	throw new CardError(`[cardation][CardId]: score shoulb be a number!`)
+		// if (typeof point != "number") {
+		// 	throw new CardError(`[cardation][CardId]: point shoulb be a number!`)
 		// }
 		this._suit = type
 		this._rank = rank
-		this._score = score
+		this._point = point
 	}
 
 	getType():string {
@@ -42,8 +42,8 @@ class CardImage {
 		return this._rank
 	}
 
-	getScore(): number {
-		return this._score
+	getPoint(): number {
+		return this._point
 	}
 }
 

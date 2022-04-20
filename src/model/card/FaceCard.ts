@@ -20,9 +20,9 @@ class FaceCard extends SuitCard {
 
 	private _rank: number
 
-	private _score: number
+	private _point: number
 
-	constructor(suit: Suit, rank: number | string, score?:number) {
+	constructor(suit: Suit, rank: number | string, point?:number) {
 		super()
 		this._suit = suit
 		if (typeof rank == "string") {
@@ -35,30 +35,30 @@ class FaceCard extends SuitCard {
 			throw new CardError(`[FaceCard][constructor]: rank shoulb be in the range from 11 to 13!`)
 		}
 		this._rank = rank
-		if (score === undefined) {
-			this._score = this._rank
+		if (point === undefined) {
+			this._point = this._rank
 		} else {
-			if (Number.isNaN(+score as any)) {
-				throw new CardError(`[FaceCard][constructor]: score is expected to be a number but get the type ${typeof score}!`)
+			if (Number.isNaN(+point as any)) {
+				throw new CardError(`[FaceCard][constructor]: point is expected to be a number but get the type ${typeof point}!`)
 			}
-			this._score = +score as any
+			this._point = +point as any
 		}
 	}
 
 	getCardId(): string {
-		return `${this._suit.getShortName()}${this._rank}.${this._score}`
+		return `${this._suit.getShortName()}${this._rank}.${this._point}`
 	}
 
-	getCardScore(): number {
-		return this._score
+	getPoint(): number {
+		return this._point
 	}
 
 	getRank(): number {
 		return this._rank
 	}
 
-	setCardScore(score: number): void {
-		this._score = score
+	setPoint(point: number): void {
+		this._point = point
 	}
 
 	getCardSuit(): Suit {

@@ -42,28 +42,28 @@ function parseCard(id:string): Card {
 	const entity: CardImage = new CardImage(id)
 	const type = entity.getType()
 	const rank = +entity.getRank()
-	const score = +entity.getScore()
+	const point = +entity.getPoint()
 	if (type == "b") {
-		return Factory.createBlackCard(score)
+		return Factory.createBlackCard(point)
 	}
 	if (type == "j") {
 		if (rank === 31) {
-			return Factory.createBlackJokerCard(rank, score)
+			return Factory.createBlackJokerCard(rank, point)
 		}
-		return Factory.createRedJokerCard(rank, score)
+		return Factory.createRedJokerCard(rank, point)
 	}
 	// if (['h', 'd', 's', 'c'].includes(type)) {
 	// }
 	const suit: Suit = short2entity_map[type]
 	if (rank === 1) {
-		return Factory.createAceCard(suit, score)
+		return Factory.createAceCard(suit, point)
 	}
 	if (1 < rank && rank < 11) {
-		return Factory.createNumberCard(suit, rank, score)
+		return Factory.createNumberCard(suit, rank, point)
 	}
 	// if (rank > 10) {
 	// }
-	return Factory.createFaceCard(suit, rank, score)
+	return Factory.createFaceCard(suit, rank, point)
 }
 
 

@@ -24,11 +24,11 @@ class Hand extends Collection {
 	}
 
 	// baccarat oriented
-	getScore(): number {
+	getPoint(): number {
 		const cards_array = this.getDuplicatedCardArray()
 		let result = 0
 		for (const card of cards_array) {
-			result += card.getCardScore()
+			result += card.getPoint()
 		}
 		return result % 10
 	}

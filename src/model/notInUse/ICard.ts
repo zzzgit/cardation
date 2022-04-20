@@ -8,9 +8,9 @@ import Suit from "../suit/Suit"
 interface ICard{
 	getCardId():string
 
-	getCardScore(): number
+	getPoint(): number
 
-	setCardScore(): void
+	setPoint(): void
 
 	getRank(): number
 

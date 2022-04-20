@@ -8,7 +8,7 @@ import Collection from "./Collection"
 abstract class Deck extends Collection {
 	/**
 	 *  deck靜態數組裡面的東西要保護起來，數組和數組內容都不能被修改
-	 * score will be specified in implementation
+	 * point will be specified in implementation
 	 */
 	abstract getOrCreatArray() :Card[]
 	/**

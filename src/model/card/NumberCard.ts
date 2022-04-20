@@ -5,11 +5,11 @@ import SuitCard from "./SuitCard"
 class NumberCard extends SuitCard {
 	private _suit: Suit
 
-	private _score: number
+	private _point: number
 
 	private _rank: number
 
-	constructor(suit: Suit, rank: number, score?: number) {
+	constructor(suit: Suit, rank: number, point?: number) {
 		super()
 		this._suit = suit
 		rank = +rank
@@ -17,22 +17,22 @@ class NumberCard extends SuitCard {
 			throw new CardError(`[NumberCard][constructor]: rank shoulb be in the range from 2 to 10!`)
 		}
 		this._rank = rank
-		if (score === undefined) {
-			this._score = this._rank
+		if (point === undefined) {
+			this._point = this._rank
 		} else {
-			if (Number.isNaN(+score as any)) {
-				throw new CardError(`[NumberCard][constructor]: score is expected to be a number but get the type ${typeof score}!`)
+			if (Number.isNaN(+point as any)) {
+				throw new CardError(`[NumberCard][constructor]: point is expected to be a number but get the type ${typeof point}!`)
 			}
-			this._score = +score as any
+			this._point = +point as any
 		}
 	}
 
 	getCardId(): string {
-		return `${this._suit.getShortName()}${this._rank}.${this._score}`
+		return `${this._suit.getShortName()}${this._rank}.${this._point}`
 	}
 
-	getCardScore(): number {
-		return this._score
+	getPoint(): number {
+		return this._point
 	}
 
 	getRank(): number {
@@ -43,8 +43,8 @@ class NumberCard extends SuitCard {
 		return this._suit
 	}
 
-	setCardScore(score: number): void {
-		this._score = score
+	setPoint(point: number): void {
+		this._point = point
 	}
 
 	toString():string {
