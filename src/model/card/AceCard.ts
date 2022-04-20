@@ -6,16 +6,16 @@ import SuitCard from "./SuitCard"
 class AceCard extends SuitCard {
 	private _suit: Suit
 
-	private _point:number
+	private _rank:number
 
 	private _score:number
 
 	constructor(suit: Suit, score?:number) {
 		super()
 		this._suit = suit
-		this._point = 1
+		this._rank = 1
 		if (score === undefined) {
-			this._score = this._point
+			this._score = this._rank
 		} else {
 			if (Number.isNaN(+score as any)) {
 				throw new CardError(`[AceCard][constructor]: score is expected to be a number but get the type ${typeof score}!`)
@@ -25,7 +25,7 @@ class AceCard extends SuitCard {
 	}
 
 	getCardId(): string {
-		return `${this._suit.getShortName()}${this._point}.${this._score}`
+		return `${this._suit.getShortName()}${this._rank}.${this._score}`
 	}
 
 	getCardScore(): number {
@@ -36,8 +36,8 @@ class AceCard extends SuitCard {
 		this._score = score
 	}
 
-	getCardPoint(): number {
-		return this._point
+	getRank(): number {
+		return this._rank
 	}
 
 	getCardSuit(): Suit {

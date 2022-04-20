@@ -13,17 +13,17 @@ const Factory = {
 	createAceCard(suit: Suit, score?: number): AceCard {
 		return new AceCard(suit, score)
 	},
-	createNumberCard(suit: Suit, point: number, score?:number): NumberCard {
-		return new NumberCard(suit, point, score)
+	createNumberCard(suit: Suit, rank: number, score?:number): NumberCard {
+		return new NumberCard(suit, rank, score)
 	},
-	createFaceCard(suit: Suit, point: number, score?:number): FaceCard {
-		return new FaceCard(suit, point, score)
+	createFaceCard(suit: Suit, rank: number, score?:number): FaceCard {
+		return new FaceCard(suit, rank, score)
 	},
-	createBlackJokerCard(point: number, score?: number): BlackJokerCard {
-		return new BlackJokerCard(point, score)
+	createBlackJokerCard(rank: number, score?: number): BlackJokerCard {
+		return new BlackJokerCard(rank, score)
 	},
-	createRedJokerCard(point: number, score?: number): RedJokerCard {
-		return new RedJokerCard(point, score)
+	createRedJokerCard(rank: number, score?: number): RedJokerCard {
+		return new RedJokerCard(rank, score)
 	},
 	createBlackCard(score?: number): BlackCard {
 		return new BlackCard(score)

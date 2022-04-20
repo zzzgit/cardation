@@ -41,29 +41,29 @@ const short2entity_map: {[key: string]: Suit} = {
 function parseCard(id:string): Card {
 	const entity: CardImage = new CardImage(id)
 	const type = entity.getType()
-	const point = +entity.getPoint()
+	const rank = +entity.getRank()
 	const score = +entity.getScore()
 	if (type == "b") {
 		return Factory.createBlackCard(score)
 	}
 	if (type == "j") {
-		if (point === 31) {
-			return Factory.createBlackJokerCard(point, score)
+		if (rank === 31) {
+			return Factory.createBlackJokerCard(rank, score)
 		}
-		return Factory.createRedJokerCard(point, score)
+		return Factory.createRedJokerCard(rank, score)
 	}
 	// if (['h', 'd', 's', 'c'].includes(type)) {
 	// }
 	const suit: Suit = short2entity_map[type]
-	if (point === 1) {
+	if (rank === 1) {
 		return Factory.createAceCard(suit, score)
 	}
-	if (1 < point && point < 11) {
-		return Factory.createNumberCard(suit, point, score)
+	if (1 < rank && rank < 11) {
+		return Factory.createNumberCard(suit, rank, score)
 	}
-	// if (point > 10) {
+	// if (rank > 10) {
 	// }
-	return Factory.createFaceCard(suit, point, score)
+	return Factory.createFaceCard(suit, rank, score)
 }
 
 

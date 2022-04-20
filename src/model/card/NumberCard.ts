@@ -7,18 +7,18 @@ class NumberCard extends SuitCard {
 
 	private _score: number
 
-	private _point: number
+	private _rank: number
 
-	constructor(suit: Suit, point: number, score?: number) {
+	constructor(suit: Suit, rank: number, score?: number) {
 		super()
 		this._suit = suit
-		point = +point
-		if (point < 2 || point > 10) {
-			throw new CardError(`[NumberCard][constructor]: point shoulb be in the range from 2 to 10!`)
+		rank = +rank
+		if (rank < 2 || rank > 10) {
+			throw new CardError(`[NumberCard][constructor]: rank shoulb be in the range from 2 to 10!`)
 		}
-		this._point = point
+		this._rank = rank
 		if (score === undefined) {
-			this._score = this._point
+			this._score = this._rank
 		} else {
 			if (Number.isNaN(+score as any)) {
 				throw new CardError(`[NumberCard][constructor]: score is expected to be a number but get the type ${typeof score}!`)
@@ -28,15 +28,15 @@ class NumberCard extends SuitCard {
 	}
 
 	getCardId(): string {
-		return `${this._suit.getShortName()}${this._point}.${this._score}`
+		return `${this._suit.getShortName()}${this._rank}.${this._score}`
 	}
 
 	getCardScore(): number {
 		return this._score
 	}
 
-	getCardPoint(): number {
-		return this._point
+	getRank(): number {
+		return this._rank
 	}
 
 	getCardSuit(): Suit {
@@ -48,7 +48,7 @@ class NumberCard extends SuitCard {
 	}
 
 	toString():string {
-		return `${this._suit.getIcon()}${this._point}`
+		return `${this._suit.getIcon()}${this._rank}`
 	}
 }
 

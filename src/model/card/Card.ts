@@ -3,9 +3,9 @@
 // super class of all kinds of cards
 abstract class Card {
 	/**
-	 * point 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 and 100 200
+	 * ranks are 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 and 100 200
 	 */
-	abstract getCardPoint(): number
+	abstract getRank(): number
 	/**
 	 * universal id in a deck
 	 */

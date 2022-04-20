@@ -18,25 +18,25 @@ const notationArray = [, , , , , , , , , , , "J", "Q", "K"]
 class FaceCard extends SuitCard {
 	private _suit: Suit
 
-	private _point: number
+	private _rank: number
 
 	private _score: number
 
-	constructor(suit: Suit, point: number | string, score?:number) {
+	constructor(suit: Suit, rank: number | string, score?:number) {
 		super()
 		this._suit = suit
-		if (typeof point == "string") {
-			point = notationMap[point]
+		if (typeof rank == "string") {
+			rank = notationMap[rank]
 		}
-		if (typeof point != "number") {
-			throw new CardError(`[FaceCard][constructor]: point shoulb be one of the elements of ["J", "Q", "K", "j", "q", "k", "11", "12", "13"]!`)
+		if (typeof rank != "number") {
+			throw new CardError(`[FaceCard][constructor]: rank shoulb be one of the elements of ["J", "Q", "K", "j", "q", "k", "11", "12", "13"]!`)
 		}
-		if (point < 11 || point > 13) {
-			throw new CardError(`[FaceCard][constructor]: point shoulb be in the range from 11 to 13!`)
+		if (rank < 11 || rank > 13) {
+			throw new CardError(`[FaceCard][constructor]: rank shoulb be in the range from 11 to 13!`)
 		}
-		this._point = point
+		this._rank = rank
 		if (score === undefined) {
-			this._score = this._point
+			this._score = this._rank
 		} else {
 			if (Number.isNaN(+score as any)) {
 				throw new CardError(`[FaceCard][constructor]: score is expected to be a number but get the type ${typeof score}!`)
@@ -46,15 +46,15 @@ class FaceCard extends SuitCard {
 	}
 
 	getCardId(): string {
-		return `${this._suit.getShortName()}${this._point}.${this._score}`
+		return `${this._suit.getShortName()}${this._rank}.${this._score}`
 	}
 
 	getCardScore(): number {
 		return this._score
 	}
 
-	getCardPoint(): number {
-		return this._point
+	getRank(): number {
+		return this._rank
 	}
 
 	setCardScore(score: number): void {
@@ -66,7 +66,7 @@ class FaceCard extends SuitCard {
 	}
 
 	toString(): string {
-		return `${this._suit.getIcon()}${notationArray[this._point]}`
+		return `${this._suit.getIcon()}${notationArray[this._rank]}`
 	}
 }
 

@@ -12,7 +12,7 @@ interface ICard{
 
 	setCardScore(): void
 
-	getCardPoint(): number
+	getRank(): number
 
 	getCardSuit(): Suit
 }

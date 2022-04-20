@@ -3,16 +3,16 @@ import JokerCard from "./JokerCard"
 
 
 class BlackJokerCard extends JokerCard {
-	private _point: number
+	private _rank: number
 
 	private _score: number = 10
 
-	constructor(point: number = 31, score?:number) {
+	constructor(rank: number = 31, score?:number) {
 		super()
-		this._point = point
-		this._score = this._point
+		this._rank = rank
+		this._score = this._rank
 		if (score === undefined) {
-			this._score = this._point
+			this._score = this._rank
 		} else {
 			if (Number.isNaN(+score as any)) {
 				throw new CardError(`[BlackCardCard][constructor]: score is expected to be a number but get the type ${typeof score}!`)
@@ -22,15 +22,15 @@ class BlackJokerCard extends JokerCard {
 	}
 
 	getCardId(): string {
-		return `j${this._point}.${this._score}`
+		return `j${this._rank}.${this._score}`
 	}
 
 	getCardScore(): number {
 		return this._score
 	}
 
-	getCardPoint(): number {
-		return this._point
+	getRank(): number {
+		return this._rank
 	}
 
 	setCardScore(score: number): void {

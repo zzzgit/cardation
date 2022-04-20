@@ -6,7 +6,7 @@ import CardError from "../../error/CardError"
 class CardImage {
 	private _suit
 
-	private _point
+	private _rank
 
 	private _score
 
@@ -18,19 +18,19 @@ class CardImage {
 		const info_array = id.split(".")
 		const [firstPart] = info_array
 		const type: string = firstPart.slice(0, 1)
-		const point: number = +firstPart.slice(1)
+		const rank: number = +firstPart.slice(1)
 		const score: number = +info_array[1]
 		// if (suit.length !== 1) {
 		// 	throw new CardError(`[cardation][CardId]: suit shoulb be a single letter!`)
 		// }
-		// if (typeof point != "number") {
-		// 	throw new CardError(`[cardation][CardId]: point shoulb be a number!`)
+		// if (typeof rank != "number") {
+		// 	throw new CardError(`[cardation][CardId]: rank shoulb be a number!`)
 		// }
 		// if (typeof score != "number") {
 		// 	throw new CardError(`[cardation][CardId]: score shoulb be a number!`)
 		// }
 		this._suit = type
-		this._point = point
+		this._rank = rank
 		this._score = score
 	}
 
@@ -38,8 +38,8 @@ class CardImage {
 		return this._suit
 	}
 
-	getPoint(): number {
-		return this._point
+	getRank(): number {
+		return this._rank
 	}
 
 	getScore(): number {
