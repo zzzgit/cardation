@@ -1,4 +1,5 @@
 import CardError from "../../error/CardError"
+import Rank from "../rank/Rank"
 import JokerCard from "./JokerCard"
 
 
@@ -7,7 +8,7 @@ class BlackJokerCard extends JokerCard {
 
 	private _point: number = 10
 
-	constructor(rank: number = 31, point?:number) {
+	constructor(rank: number = Rank.BlackJoker, point?:number) {
 		super()
 		this._rank = rank
 		this._point = this._rank

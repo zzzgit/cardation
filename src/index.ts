@@ -33,6 +33,8 @@ import Suit from "./model/suit/Suit"
 // tool
 import CardFactory from "./tool/CardFactory"
 import Persistence from "./tool/Persistence"
+// rank
+import Rank from "./model/rank/Rank"
 
 
 /**
@@ -61,5 +63,6 @@ export {Card, AceCard, BlackJokerCard, BlackMarkerCard, FaceCard, JokerCard, Mar
 export {Collection, Deck, Hand, ICollection, IShoe, Shoe}
 export {Flush, IPattern, Pair}
 export {CardImage}
+export {Rank}
 export {Club, Diamond, Heart, Spade, Suit}
 export {CardFactory, Persistence}

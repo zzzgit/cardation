@@ -1,6 +1,7 @@
 import Suit from "../suit/Suit"
 import CardError from "../../error/CardError"
 import SuitCard from "./SuitCard"
+import Rank from "../rank/Rank"
 
 
 class AceCard extends SuitCard {
@@ -13,7 +14,7 @@ class AceCard extends SuitCard {
 	constructor(suit: Suit, point?:number) {
 		super()
 		this._suit = suit
-		this._rank = 1
+		this._rank = Rank.A
 		if (point === undefined) {
 			this._point = this._rank
 		} else {
