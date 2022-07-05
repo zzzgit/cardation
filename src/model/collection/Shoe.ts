@@ -51,6 +51,11 @@ class Shoe extends Collection implements IShoe {
 		this._decks_int++
 	}
 
+	/**
+	 * the order will be from the end of this array to the beginning
+	 * @param number
+	 * @return Card[]
+	 */
 	deal(number: number = 1):Card[] {
 		if (this._isExhausted) {
 			throw new CardError(`[Shoe][deal]: the shoe is exhausted!!`)

@@ -5,8 +5,8 @@ import Suit from "../suit/Suit"
  * not in use
  * interface for all cards
  */
-interface ICard{
-	getCardId():string
+interface ICard {
+	getCardId(): string
 
 	getPoint(): number
 
