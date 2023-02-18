@@ -73,7 +73,7 @@ class Shoe extends Collection implements IShoe {
 		return result
 	}
 
-	cut(number: number = samael.randomInt(999)):void {
+	cut(number: number = samael.random(999)):void {
 		number = number % this.getCardArray().length
 		const right_arr = this.getCardArray().splice(0, number)
 		this.getCardArray().push(...right_arr)
