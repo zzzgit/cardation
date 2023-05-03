@@ -13,7 +13,7 @@ class Pair implements IPattern {
 			return false
 		}
 		const [firstCard] = cards
-		if (!firstCard.equals(cards[1])) {
+		if (firstCard.getRank() !== cards[1].getRank()) {
 			return false
 		}
 		return true
