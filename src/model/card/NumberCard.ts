@@ -14,7 +14,7 @@ class NumberCard extends SuitCard {
 		this._suit = suit
 		rank = +rank
 		if (rank < 2 || rank > 10) {
-			throw new CardError(`[NumberCard][constructor]: rank shoulb be in the range from 2 to 10!`)
+			throw new CardError(`[NumberCard][constructor]: rank should be in the range from 2 to 10!`)
 		}
 		this._rank = rank
 		if (point === undefined) {

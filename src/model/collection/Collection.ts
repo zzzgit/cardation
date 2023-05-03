@@ -30,6 +30,7 @@ abstract class Collection implements ICollection {
 	/**
 	 * Push card(s) to the collection.
 	 * @param card card to be push in
+	 * @todo avoid duplicate card object in a collection
 	 */
 	pushCard(...card:Card[]): void {
 		this._cardArray.push(...card)

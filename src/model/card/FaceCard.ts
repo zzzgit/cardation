@@ -29,10 +29,10 @@ class FaceCard extends SuitCard {
 			rank = notationMap[rank]
 		}
 		if (typeof rank != "number") {
-			throw new CardError(`[FaceCard][constructor]: rank shoulb be one of the elements of ["J", "Q", "K", "j", "q", "k", "11", "12", "13"]!`)
+			throw new CardError(`[FaceCard][constructor]: rank should be one of the elements of ["J", "Q", "K", "j", "q", "k", "11", "12", "13"]!`)
 		}
 		if (rank < 11 || rank > 13) {
-			throw new CardError(`[FaceCard][constructor]: rank shoulb be in the range from 11 to 13!`)
+			throw new CardError(`[FaceCard][constructor]: rank should be in the range from 11 to 13!`)
 		}
 		this._rank = rank
 		if (point === undefined) {

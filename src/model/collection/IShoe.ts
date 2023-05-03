@@ -8,8 +8,6 @@ interface IShoe extends ICollection {
 	/**
 	 * Shuffle.
 	 * @todo 傳入random函數
-	 * @param {Card[]} cards cards to be shuffled
-	 * @returns {Card[]} shuffled cards
 	 */
 	shuffle():void
 	/**
@@ -18,9 +16,9 @@ interface IShoe extends ICollection {
 	sort():void
 	/**
 	 * Cut the cards conllection.
-	 * @param num the index from where to cut
+	 * @param number the index from where to cut
 	 */
-	cut(num: number):void
+	cut(number: number):void
 	deal(number: number):Card[]
 	/**
 	 * Clear the shoe, all cards will be removed.

@@ -21,13 +21,13 @@ class CardImage {
 		const rank: number = +firstPart.slice(1)
 		const point: number = +info_array[1]
 		// if (suit.length !== 1) {
-		// 	throw new CardError(`[cardation][CardId]: suit shoulb be a single letter!`)
+		// 	throw new CardError(`[cardation][CardId]: suit should be a single letter!`)
 		// }
 		// if (typeof rank != "number") {
-		// 	throw new CardError(`[cardation][CardId]: rank shoulb be a number!`)
+		// 	throw new CardError(`[cardation][CardId]: rank should be a number!`)
 		// }
 		// if (typeof point != "number") {
-		// 	throw new CardError(`[cardation][CardId]: point shoulb be a number!`)
+		// 	throw new CardError(`[cardation][CardId]: point should be a number!`)
 		// }
 		this._suit = type
 		this._rank = rank
