@@ -1,6 +1,6 @@
 {
 	"name": "cardation",
-	"version": "0.1.47",
+	"version": "0.1.48",
 	"type": "commonjs",
 	"description": "fundation of card games, card model",
 	"repository": {
@@ -9,7 +9,9 @@
 	},
 	"main": "built/lib/index.js",
 	"types": "built/t/src/index.d.ts",
-	"files": ["built"],
+	"files": [
+		"built"
+	],
 	"scripts": {
 		"test": "npm run lint && jest",
 		"build": "npm run test && npm run clean && npm run webpack",
