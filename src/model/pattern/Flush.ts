@@ -17,7 +17,7 @@ class Flush implements IPattern {
 			if (!(card instanceof SuitCard)) {
 				return true
 			}
-			if (card.getCardSuit != firstCard.getCardSuit) {
+			if (card.getCardSuit() != firstCard.getCardSuit()) {
 				return true
 			}
 			return false
