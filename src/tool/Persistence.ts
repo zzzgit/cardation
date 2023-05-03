@@ -9,7 +9,7 @@ import Spade from "../model/suit/Spade"
 import Club from "../model/suit/Club"
 
 /**
- * a serialization tool for decks
+ * A serialization tool for decks.
  */
 class Persistence {
 	static serialize(coll: ICollection):string {

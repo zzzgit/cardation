@@ -1,8 +1,12 @@
 import Card from "../card/Card"
 
+/**
+ * Pattern interface
+ */
 interface IPattern {
 	/**
-	 * the cards which form this pattern
+	 * Get the cards which form this pattern.
+	 * @returns {Card[]}
 	 */
 	getCards(): Card[]
 }

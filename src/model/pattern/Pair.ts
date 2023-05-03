@@ -2,8 +2,12 @@ import CardError from "../../error/CardError"
 import Card from "../card/Card"
 import IPattern from "./IPattern"
 
-// 對子、三條，可以再抽象一下
 class Pair implements IPattern {
+	/**
+	 * Test if the cards form a pair.
+	 * @param {Card[]} cards cards to be tested
+	 * @returns {boolean} true if the cards form a pair
+	 */
 	static isPair(cards: Card[]): boolean {
 		if (cards.length !== 2) {
 			return false

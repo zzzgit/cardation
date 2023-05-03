@@ -2,8 +2,16 @@ import CardError from "../../error/CardError"
 import Card from "../card/Card"
 import Collection from "./Collection"
 
-// 可以考慮再做一個IHand
+/**
+ * A hand is a collection of cards.
+ * @todo 可以考慮再做一個IHand
+ */
 class Hand extends Collection {
+	/**
+	 * Form a hand from a card array.
+	 * @param hands
+	 * @returns
+	 */
 	static from(...hands: Hand[]): Hand {
 		const allCards: Card[] = []
 		hands.forEach((hand:Hand) => {
@@ -23,7 +31,10 @@ class Hand extends Collection {
 		}
 	}
 
-	// baccarat oriented
+	/**
+	 * Get a baccarat based point of the hand.
+	 * @returns {number} the point of the hand
+	 */
 	getPoint(): number {
 		const cards_array = this.getDuplicatedCardArray()
 		let result = 0
@@ -37,6 +48,10 @@ class Hand extends Collection {
 		this.getCardArray().push(...card)
 	}
 
+	/**
+	 * Get the first card in the array.
+	 * @returns {Card[]} the first card of the hand
+	 */
 	getFirstCard(): Card | undefined {
 		const cards_array = this.getDuplicatedCardArray()
 		if (cards_array.length) {
@@ -45,6 +60,10 @@ class Hand extends Collection {
 		return undefined
 	}
 
+	/**
+	 * Get the last card in the array.
+	 * @returns {Card} the last card of the hand
+	 */
 	getLastCard(): Card | undefined {
 		const cards_array = this.getDuplicatedCardArray()
 		if (cards_array.length) {
@@ -55,13 +74,17 @@ class Hand extends Collection {
 
 	// 或者deal
 	play(): void {
-
+		throw new Error("Method not implemented.")
 	}
 
 	// public recycle(collector: Collection): void {
 	// 	collector.pushCard(...this.getDuplicatedCardArray())
 	// 	this.clear()
 	// }
+
+	/**
+	 * Clear the hand, all cards will be removed.
+	 */
 	clear(): void {
 		this.getCardArray().length = 0
 	}

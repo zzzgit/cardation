@@ -1,3 +1,6 @@
+/**
+ * Unique identifier for a card
+ */
 enum Rank {
 	A= 1,
 	R2= 2,

@@ -23,7 +23,7 @@ import Flush from "./model/pattern/Flush"
 import IPattern from "./model/pattern/IPattern"
 import Pair from "./model/pattern/Pair"
 // serialization
-import CardImage from "./model/serialization/CardImage"
+// import CardImage from "./model/serialization/CardImage"
 // suit
 import Club from "./model/suit/Club"
 import Diamond from "./model/suit/Diamond"
@@ -62,7 +62,7 @@ export {CardError}
 export {Card, AceCard, BlackJokerCard, BlackMarkerCard, FaceCard, JokerCard, MarkerCard, NumberCard, SuitCard, RedJokerCard}
 export {Collection, Deck, Hand, ICollection, IShoe, Shoe}
 export {Flush, IPattern, Pair}
-export {CardImage}
+// export {CardImage}
 export {Rank}
 export {Club, Diamond, Heart, Spade, Suit}
 export {CardFactory, Persistence}

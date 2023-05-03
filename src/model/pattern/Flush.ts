@@ -6,6 +6,11 @@ import IPattern from "./IPattern"
 
 
 class Flush implements IPattern {
+	/**
+	 * Test if the cards form a flush.
+	 * @param {Card[]}cards cards to be tested
+	 * @returns {boolean} true if the cards form a flush
+	 */
 	static isFlush(cards: SuitCard[]): boolean {
 		const [firstCard] = cards
 		const isNoiseExisting = cards.some((card) => {

@@ -2,17 +2,29 @@ import Card from "../card/Card"
 import ICollection from "./ICollection"
 
 /**
- * shuffle 和 cut 本來是入shoe之前的動作，為了方便才寫在這個class中
+ * A shoe is a collection of cards.
  */
 interface IShoe extends ICollection {
-	// 傳入random函數
-	shuffle():void
-	sort():void
-	cut(num: number):void
 	/**
-	 * 牌不夠，需要報錯
+	 * Shuffle.
+	 * @todo 傳入random函數
+	 * @param {Card[]} cards cards to be shuffled
+	 * @returns {Card[]} shuffled cards
 	 */
-	deal():Card[]
+	shuffle():void
+	/**
+	 * Sort a shoe.
+	 */
+	sort():void
+	/**
+	 * Cut the cards conllection.
+	 * @param num the index from where to cut
+	 */
+	cut(num: number):void
+	deal(number: number):Card[]
+	/**
+	 * Clear the shoe, all cards will be removed.
+	 */
 	clear(): void
 }
 

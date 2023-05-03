@@ -3,7 +3,6 @@ import Card from "../card/Card"
 import Collection from "./Collection"
 import Deck from "./Deck"
 import IShoe from "./IShoe"
-import samael from "samael"
 
 
 class Shoe extends Collection implements IShoe {
@@ -11,7 +10,10 @@ class Shoe extends Collection implements IShoe {
 
 	private _isExhausted: boolean = false
 
-	// 在此處洗牌，是否有優勢？
+	/**
+	 * @todo 在此處洗牌，是否有優勢？
+	 * @param decks
+	 */
 	constructor(decks?:Deck[]) {
 		super()
 		if (decks) {
@@ -30,12 +32,10 @@ class Shoe extends Collection implements IShoe {
 		this.getCardArray().length = 0
 	}
 
-	// 傳入 hash , 傳入比較函數
 	sort(): void {
 		throw new Error("Method not implemented.")
 	}
 
-	// 更加複雜的shuffle版本，需要
 	shuffle(): void {
 		for (let len = this.getCardArray().length - 1; len > 0; len--) {
 			const index_int = Math.ceil(Math.random() * len)
@@ -46,14 +46,18 @@ class Shoe extends Collection implements IShoe {
 		}
 	}
 
+	/**
+	 * Push cards of a deck into the shoe.
+	 * @param deck the deck to be pushed
+	 */
 	pushDeck(deck:Deck):void {
 		this.pushCard(...deck.getDuplicatedCardArray())
 		this._decks_int++
 	}
 
 	/**
-	 * the order will be from the end of this array to the beginning
-	 * @param number
+	 * Deal cards from the end of the array.
+	 * @param {number} number how many cards to deal, default to 1
 	 * @return Card[]
 	 */
 	deal(number: number = 1):Card[] {
@@ -70,10 +74,13 @@ class Shoe extends Collection implements IShoe {
 		for (let i = 0; i < number; i++) {
 			result.push(this.getCardArray().pop() as Card)
 		}
+		if (this.getCardArray().length === 0) {
+			this._isExhausted = true
+		}
 		return result
 	}
 
-	cut(number: number = samael.random(999)):void {
+	cut(number: number):void {
 		number = number % this.getCardArray().length
 		const right_arr = this.getCardArray().splice(0, number)
 		this.getCardArray().push(...right_arr)

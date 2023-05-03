@@ -3,16 +3,17 @@ import Collection from "./Collection"
 
 /**
  *
- * abstract father class for all collection
+ * Abstract father class for all collection.
  */
 abstract class Deck extends Collection {
 	/**
-	 *  deck靜態數組裡面的東西要保護起來，數組和數組內容都不能被修改
-	 * point will be specified in implementation
+	 * Create an array of cards for the deck, if already exist, return the array.
+	 * @param {Card[]} cards
 	 */
 	abstract getOrCreatArray() :Card[]
 	/**
-	 * detect the integety of the deck
+	 * Detect the integety of the deck.
+	 * @returns {boolean} true if the deck is valid
 	 */
 	abstract detect() :boolean
 }

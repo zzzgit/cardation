@@ -1,7 +1,7 @@
 import CardError from "../../error/CardError"
 
 /**
- * internal use only
+ * Internal use only
  */
 class CardImage {
 	private _suit

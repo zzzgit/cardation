@@ -7,7 +7,7 @@ import BlackJokerCard from "../model/card/BlackJokerCard"
 import RedJokerCard from "../model/card/RedJokerCard"
 
 /**
- * a tool which pass the parameters to constructor as is
+ * A tool which pass the parameters to constructor as is.
  */
 const Factory = {
 	createAceCard(suit: Suit, point?: number): AceCard {

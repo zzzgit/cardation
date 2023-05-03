@@ -1,19 +1,28 @@
 import Card from "../card/Card"
 
+/**
+ * A collection of cards.
+ */
 interface ICollection {
 	/**
-	 * it is a duplicated array
+	 * Return a duplicated collection with the same cards. This is not neccessarily a deep copy.
+	 * @returns {Card[]}
 	 */
 	getDuplicatedCardArray(): Card[]
-
+	/**
+	 * Return the original collection of cards.
+	 * @returns {Card[]}
+	 */
 	getCardArray(): Card[]
 	/**
-	 * whether or not the collection contains a certain card
-	 * @param card
+	 * Whether or not the collection contains a certain card.
+	 * @param {Card} card
+	 * @returns {boolean} true if the collection contains the card
 	 */
 	includes(card:Card):boolean
 	/**
-	 * an id of this deck based on the order of the cards
+	 * An id of this deck based on the order of the cards.
+	 * @returns {string} id
 	 */
 	serialize(): string
 }
