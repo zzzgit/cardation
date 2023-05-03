@@ -36,6 +36,11 @@ class Shoe extends Collection implements IShoe {
 		throw new Error("Method not implemented.")
 	}
 
+	pushCard(...card: Card[]): void {
+		super.pushCard(...card)
+		this._isExhausted = false
+	}
+
 	shuffle(): void {
 		for (let len = this.getCardArray().length - 1; len > 0; len--) {
 			const index_int = Math.ceil(Math.random() * len)
