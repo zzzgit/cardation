@@ -9,7 +9,7 @@ import RedJokerCard from "../model/card/RedJokerCard"
 /**
  * A tool which pass the parameters to constructor as is.
  */
-const Factory = {
+const CardFactory = {
 	createAceCard(suit: Suit, point?: number): AceCard {
 		return new AceCard(suit, point)
 	},
@@ -30,4 +30,4 @@ const Factory = {
 	},
 }
 
-export default Factory
+export default CardFactory

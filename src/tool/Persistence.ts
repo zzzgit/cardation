@@ -1,7 +1,7 @@
 import Card from "../model/card/Card"
 import ICollection from "../model/collection/ICollection"
 import CardImage from "../model/serialization/CardImage"
-import Factory from "./CardFactory"
+import CardFactory from "./CardFactory"
 import Suit from "../model/suit/Suit"
 import Heart from "../model/suit/Heart"
 import Diamond from "../model/suit/Diamond"
@@ -44,26 +44,26 @@ function parseCard(id:string): Card {
 	const rank = +entity.getRank()
 	const point = +entity.getPoint()
 	if (type == "b") {
-		return Factory.createBlackCard(point)
+		return CardFactory.createBlackCard(point)
 	}
 	if (type == "j") {
 		if (rank === 31) {
-			return Factory.createBlackJokerCard(rank, point)
+			return CardFactory.createBlackJokerCard(rank, point)
 		}
-		return Factory.createRedJokerCard(rank, point)
+		return CardFactory.createRedJokerCard(rank, point)
 	}
 	// if (['h', 'd', 's', 'c'].includes(type)) {
 	// }
 	const suit: Suit = short2entity_map[type]
 	if (rank === 1) {
-		return Factory.createAceCard(suit, point)
+		return CardFactory.createAceCard(suit, point)
 	}
 	if (1 < rank && rank < 11) {
-		return Factory.createNumberCard(suit, rank, point)
+		return CardFactory.createNumberCard(suit, rank, point)
 	}
 	// if (rank > 10) {
 	// }
-	return Factory.createFaceCard(suit, rank, point)
+	return CardFactory.createFaceCard(suit, rank, point)
 }
 
 
