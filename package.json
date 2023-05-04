@@ -35,7 +35,7 @@
 	},
 	"author": "jonkee",
 	"dependencies": {
-		"samael": "^3.0.1",
+		"samael": "^3.0.2",
 		"ts-custom-error": "^3.3.1"
 	},
 	"devDependencies": {
