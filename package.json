@@ -7,8 +7,8 @@
 		"type": "git",
 		"url": "https://github.com/zzzgit/cardation"
 	},
-	"main": "built/src/lib/index.js",
-	"types": "built/src/t/index.d.ts",
+	"main": "built/lib/index.js",
+	"types": "built/t/index.d.ts",
 	"files": [
 		"built"
 	],
@@ -31,7 +31,7 @@
 	"license": "LGPL-3.0-or-later",
 	"engines": {
 		"npm": ">=9.5.0",
-		"node": ">=18.0"
+		"node": ">=20.0"
 	},
 	"author": "jonkee",
 	"dependencies": {

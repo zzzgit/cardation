@@ -29,7 +29,7 @@
 		"noImplicitReturns": true,
 		"allowSyntheticDefaultImports": true,
 		"esModuleInterop": false,
-		"rootDir": "./",
+		// "rootDir": "./", 導致tsc 編譯的文件夾結構：built/lib/src/...
 		"experimentalDecorators": true,
 		"resolveJsonModule": true,
 	},
