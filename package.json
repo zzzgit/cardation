@@ -19,7 +19,7 @@
 		"rollup": "cross-env NODE_ENV=production rollup -c",
 		"lint": "eslint './src/**' '-c=.eslintrc.yml'",
 		"jest": "jest 'test/*'",
-		"tsc": "tsc"
+		"tsc": "tsc --sourceMap false"
 	},
 	"bugs": "https://github.com/zzzgit/cardation/issues",
 	"keywords": [
