@@ -15,6 +15,11 @@ interface ICollection {
 	 */
 	getCardArray(): Card[]
 	/**
+	 * Return the length of the array of cards.
+	 * @returns {number}
+	 */
+	getLength(): number
+	/**
 	 * Whether or not the collection contains a certain card.
 	 * @param {Card} card
 	 * @returns {boolean} true if the collection contains the card

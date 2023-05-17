@@ -27,6 +27,10 @@ abstract class Collection implements ICollection {
 		return [...this._cardArray]
 	}
 
+	getLength(): number {
+		return this.getCardArray().length
+	}
+
 	/**
 	 * Push card(s) to the collection.
 	 * @param card card to be push in
