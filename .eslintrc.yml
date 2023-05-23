@@ -4,5 +4,4 @@ parserOptions:
     project: "./tsconfig.json"
 extends: ["janus/ts", "janus/security" ]
 ignorePatterns: [ "built/**/*"]
-rules: 
-    "valid-jsdoc": off
+rules: {}
