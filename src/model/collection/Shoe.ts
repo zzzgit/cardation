@@ -6,7 +6,7 @@ import IShoe from "./IShoe"
 
 
 class Shoe extends Collection implements IShoe {
-	private _decks_int:number = -1
+	private _decks_int: number = -1
 
 	private _isExhausted: boolean = false
 
@@ -14,7 +14,7 @@ class Shoe extends Collection implements IShoe {
 	 * @todo 在此處洗牌，是否有優勢？
 	 * @param decks
 	 */
-	constructor(decks?:Deck[]) {
+	constructor(decks?: Deck[]) {
 		super()
 		if (decks) {
 			this._decks_int = decks.length
@@ -55,7 +55,7 @@ class Shoe extends Collection implements IShoe {
 	 * Push cards of a deck into the shoe.
 	 * @param deck the deck to be pushed
 	 */
-	pushDeck(deck:Deck):void {
+	pushDeck(deck: Deck): void {
 		this.pushCard(...deck.getDuplicatedCardArray())
 		this._decks_int++
 	}
@@ -65,7 +65,7 @@ class Shoe extends Collection implements IShoe {
 	 * @param {number} number how many cards to deal, default to 1
 	 * @return Card[]
 	 */
-	deal(number: number = 1):Card[] {
+	deal(number: number = 1): Card[] {
 		if (this._isExhausted) {
 			throw new CardError(`[Shoe][deal]: the shoe is exhausted!!`)
 		}
@@ -85,7 +85,7 @@ class Shoe extends Collection implements IShoe {
 		return result
 	}
 
-	cut(number: number):void {
+	cut(number: number): void {
 		number = number % this.getCardArray().length
 		const right_arr = this.getCardArray().splice(0, number)
 		this.getCardArray().push(...right_arr)
