@@ -1,6 +1,5 @@
 import {Heart, AceCard, Club, FaceCard, Rank} from "../src"
 
-
 const acecard = new AceCard(new Club())
 const facecard = new FaceCard(new Club(), Rank.K, 12)
 
@@ -28,6 +27,8 @@ describe("card.ts", () => {
 		const acecard2 = new AceCard(new Heart(), 1)
 		const facecard = new FaceCard(new Heart(), Rank.K, 12)
 		const facecard2 = new FaceCard(new Heart(), Rank.K, 12)
-		return expect(acecard.equals(acecard2) && facecard.equals(facecard2)).toBe(true)
+		return expect(acecard.equals(acecard2) && facecard.equals(facecard2)).toBe(
+			true
+		)
 	})
 })

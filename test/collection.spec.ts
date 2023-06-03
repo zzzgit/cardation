@@ -1,5 +1,15 @@
-import {AceCard, CardFactory, Club, FaceCard, Flush, Hand, Heart, Pair, Rank, Shoe} from "../src"
-
+import {
+	AceCard,
+	CardFactory,
+	Club,
+	FaceCard,
+	Flush,
+	Hand,
+	Heart,
+	Pair,
+	Rank,
+	Shoe,
+} from "../src"
 
 const acecard = new AceCard(new Club())
 const facecard = new FaceCard(new Club(), Rank.K, 12)
@@ -35,7 +45,7 @@ describe("shoe.ts", () => {
 		const [card] = cards
 		return expect(card).toEqual(acecard)
 	})
-	test("cut", ()=>{
+	test("cut", () => {
 		shoe.clear()
 		shoe.pushCard(facecard)
 		shoe.pushCard(acecard)
@@ -122,7 +132,6 @@ describe("collection.ts", () => {
 		return expect(str).toBe("c12.12 c1.1")
 	})
 })
-
 
 describe("hand.ts", () => {
 	test("getFirstCard", () => {
