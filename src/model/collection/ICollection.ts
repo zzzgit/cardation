@@ -24,7 +24,7 @@ interface ICollection {
 	 * @param {Card} card
 	 * @returns {boolean} true if the collection contains the card
 	 */
-	includes(card:Card):boolean
+	includes(card: Card): boolean
 	/**
 	 * An id of this deck based on the order of the cards.
 	 * @returns {string} id

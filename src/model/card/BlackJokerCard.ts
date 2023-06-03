@@ -2,13 +2,12 @@ import CardError from "../../error/CardError"
 import Rank from "../rank/Rank"
 import JokerCard from "./JokerCard"
 
-
 class BlackJokerCard extends JokerCard {
 	private _rank: number
 
 	private _point: number = 10
 
-	constructor(rank: number = Rank.BlackJoker, point?:number) {
+	constructor(rank: number = Rank.BlackJoker, point?: number) {
 		super()
 		this._rank = rank
 		this._point = this._rank
@@ -16,7 +15,9 @@ class BlackJokerCard extends JokerCard {
 			this._point = this._rank
 		} else {
 			if (Number.isNaN(+point as any)) {
-				throw new CardError(`[BlackCardCard][constructor]: point is expected to be a number but get the type ${typeof point}!`)
+				throw new CardError(
+					`[BlackCardCard][constructor]: point is expected to be a number but get the type ${typeof point}!`
+				)
 			}
 			this._point = +point as any
 		}
@@ -38,8 +39,8 @@ class BlackJokerCard extends JokerCard {
 		this._point = point
 	}
 
-	toString():string {
-		return '🃏'
+	toString(): string {
+		return "🃏"
 	}
 }
 

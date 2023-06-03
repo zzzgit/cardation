@@ -1,6 +1,5 @@
 import Suit from "../suit/Suit"
 
-
 /**
  * not in use
  * interface for all cards

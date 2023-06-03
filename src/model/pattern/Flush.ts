@@ -4,7 +4,6 @@ import SuitCard from "../card/SuitCard"
 import Suit from "../suit/Suit"
 import IPattern from "./IPattern"
 
-
 class Flush implements IPattern {
 	/**
 	 * Test if the cards form a flush.
@@ -32,7 +31,9 @@ class Flush implements IPattern {
 	constructor(cards: SuitCard[]) {
 		const [firstCard] = cards
 		if (!Flush.isFlush(cards)) {
-			throw new CardError(`[Flush][constructor]: all the cards must be of the same suit to form a flush!`)
+			throw new CardError(
+				`[Flush][constructor]: all the cards must be of the same suit to form a flush!`
+			)
 		}
 		this._suit = firstCard.getCardSuit()
 		this._cards = [...cards]
@@ -48,4 +49,3 @@ class Flush implements IPattern {
 }
 
 export default Flush
-

@@ -13,10 +13,10 @@ const CardFactory = {
 	createAceCard(suit: Suit, point?: number): AceCard {
 		return new AceCard(suit, point)
 	},
-	createNumberCard(suit: Suit, rank: number, point?:number): NumberCard {
+	createNumberCard(suit: Suit, rank: number, point?: number): NumberCard {
 		return new NumberCard(suit, rank, point)
 	},
-	createFaceCard(suit: Suit, rank: number, point?:number): FaceCard {
+	createFaceCard(suit: Suit, rank: number, point?: number): FaceCard {
 		return new FaceCard(suit, rank, point)
 	},
 	createBlackJokerCard(rank: number, point?: number): BlackJokerCard {

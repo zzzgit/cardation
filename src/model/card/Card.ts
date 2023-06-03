@@ -1,5 +1,3 @@
-
-
 // super class of all kinds of cards
 abstract class Card {
 	/**
@@ -28,7 +26,7 @@ abstract class Card {
 	 * @param {Card} other
 	 * @returns {boolean}
 	 */
-	equals(other:Card): boolean {
+	equals(other: Card): boolean {
 		return this.getCardId() == other.getCardId()
 	}
 }

@@ -1,6 +1,5 @@
 import Suit from "./Suit"
 
-
 class Heart extends Suit {
 	private readonly _id: string = "SUIT_HEART"
 

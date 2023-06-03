@@ -4,7 +4,6 @@ import Collection from "./Collection"
 import Deck from "./Deck"
 import IShoe from "./IShoe"
 
-
 class Shoe extends Collection implements IShoe {
 	private _decks_int: number = -1
 
@@ -19,7 +18,9 @@ class Shoe extends Collection implements IShoe {
 		if (decks) {
 			this._decks_int = decks.length
 			if (this._decks_int < 1) {
-				throw new CardError(`[Shoe][constructor]: at least one Deck to create a Shoe!`)
+				throw new CardError(
+					`[Shoe][constructor]: at least one Deck to create a Shoe!`
+				)
 			}
 			for (let i = 0; i++; i < decks.length) {
 				const deck = decks[i]
@@ -70,7 +71,9 @@ class Shoe extends Collection implements IShoe {
 			throw new CardError(`[Shoe][deal]: the shoe is exhausted!!`)
 		}
 		if (number <= 0) {
-			throw new CardError(`[Shoe][deal]: the parameter number must be great than 0!`)
+			throw new CardError(
+				`[Shoe][deal]: the parameter number must be great than 0!`
+			)
 		}
 		if (number > this.getCardArray().length) {
 			throw new CardError(`[Shoe][deal]: there's not enough cards in the shoe!`)

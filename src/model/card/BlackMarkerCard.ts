@@ -1,7 +1,6 @@
 import CardError from "../../error/CardError"
 import MarkerCard from "./MarkerCard"
 
-
 class BlackMarkerCard extends MarkerCard {
 	private _rank: number
 
@@ -15,7 +14,9 @@ class BlackMarkerCard extends MarkerCard {
 			this._point = this._rank
 		} else {
 			if (Number.isNaN(+point as any)) {
-				throw new CardError(`[BlackCard][constructor]: point is expected to be a number but get the type ${typeof point}!`)
+				throw new CardError(
+					`[BlackCard][constructor]: point is expected to be a number but get the type ${typeof point}!`
+				)
 			}
 			this._point = +point as any
 		}
@@ -38,7 +39,7 @@ class BlackMarkerCard extends MarkerCard {
 	}
 
 	toString(): string {
-		return '⬛'
+		return "⬛"
 	}
 }
 

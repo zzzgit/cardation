@@ -13,7 +13,9 @@ class CardImage {
 	constructor(id: string) {
 		const id_regexp = /^[a-zA-Z]\d{1,3}\.\d{1,4}$/
 		if (!id_regexp.test(id)) {
-			throw new CardError(`[CardId][constructor]: the format of id should match /^[a-zA-Z]\\d{1,3}\\.\\d{1,4}$/!`)
+			throw new CardError(
+				`[CardId][constructor]: the format of id should match /^[a-zA-Z]\\d{1,3}\\.\\d{1,4}$/!`
+			)
 		}
 		const info_array = id.split(".")
 		const [firstPart] = info_array
@@ -34,7 +36,7 @@ class CardImage {
 		this._point = point
 	}
 
-	getType():string {
+	getType(): string {
 		return this._suit
 	}
 

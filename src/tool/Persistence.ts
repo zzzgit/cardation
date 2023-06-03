@@ -12,7 +12,7 @@ import Club from "../model/suit/Club"
  * A serialization tool for decks.
  */
 class Persistence {
-	static serialize(coll: ICollection):string {
+	static serialize(coll: ICollection): string {
 		const cards = coll.getDuplicatedCardArray()
 		let hash = ""
 		for (const card of cards) {
@@ -38,7 +38,7 @@ const short2entity_map: {[key: string]: Suit} = {
 	c: new Club(),
 }
 
-function parseCard(id:string): Card {
+function parseCard(id: string): Card {
 	const entity: CardImage = new CardImage(id)
 	const type = entity.getType()
 	const rank = +entity.getRank()
@@ -65,6 +65,5 @@ function parseCard(id:string): Card {
 	// }
 	return CardFactory.createFaceCard(suit, rank, point)
 }
-
 
 export default Persistence

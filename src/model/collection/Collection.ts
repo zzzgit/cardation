@@ -19,7 +19,7 @@ abstract class Collection implements ICollection {
 	 * @param index where to insert
 	 * @param cards the cards to be inserted
 	 */
-	insertCard(index: number, ...cards: Card[]):void {
+	insertCard(index: number, ...cards: Card[]): void {
 		this.getCardArray().splice(index, 0, ...cards)
 	}
 
@@ -36,13 +36,13 @@ abstract class Collection implements ICollection {
 	 * @param card card to be push in
 	 * @todo avoid duplicate card object in a collection
 	 */
-	pushCard(...card:Card[]): void {
+	pushCard(...card: Card[]): void {
 		this._cardArray.push(...card)
 	}
 
 	includes(card: Card): boolean {
 		const cardArray = this.getDuplicatedCardArray()
-		return cardArray.find(element => card.equals(element)) ? true : false
+		return cardArray.find((element) => card.equals(element)) ? true : false
 	}
 
 	serialize(): string {

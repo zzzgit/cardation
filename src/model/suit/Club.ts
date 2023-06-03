@@ -1,6 +1,5 @@
 import Suit from "./Suit"
 
-
 class Club extends Suit {
 	private _id: string = "SUIT_CLUB"
 

@@ -36,18 +36,18 @@ import Persistence from "./tool/Persistence"
 // rank
 import Rank from "./model/rank/Rank"
 
-
 /**
  * namespace for this lib, not in use
  */
-const Cardation: { [key: string]: any } = { // readonly
+const Cardation: {[key: string]: any} = {
+	// readonly
 	__initailized: false,
 	__descriptor: {
-		configurable: false,	// 不可刪除
-		enumerable: true,		// 可讀
-		writable: false,		// 不可修改
+		configurable: false, // 不可刪除
+		enumerable: true, // 可讀
+		writable: false, // 不可修改
 	},
-	initialize: function():number {
+	initialize: function (): number {
 		if (this.__initailized) {
 			return 0
 		}
@@ -57,9 +57,19 @@ const Cardation: { [key: string]: any } = { // readonly
 }
 export default Cardation
 
-
 export {CardError}
-export {Card, AceCard, BlackJokerCard, BlackMarkerCard, FaceCard, JokerCard, MarkerCard, NumberCard, SuitCard, RedJokerCard}
+export {
+	Card,
+	AceCard,
+	BlackJokerCard,
+	BlackMarkerCard,
+	FaceCard,
+	JokerCard,
+	MarkerCard,
+	NumberCard,
+	SuitCard,
+	RedJokerCard,
+}
 export {Collection, Deck, Hand, ICollection, IShoe, Shoe}
 export {Flush, IPattern, Pair}
 // export {CardImage}

@@ -9,17 +9,17 @@ interface IShoe extends ICollection {
 	 * Shuffle.
 	 * @todo 傳入random函數
 	 */
-	shuffle():void
+	shuffle(): void
 	/**
 	 * Sort a shoe.
 	 */
-	sort():void
+	sort(): void
 	/**
 	 * Cut the cards conllection.
 	 * @param number the index from where to cut
 	 */
-	cut(number: number):void
-	deal(number: number):Card[]
+	cut(number: number): void
+	deal(number: number): Card[]
 	/**
 	 * Clear the shoe, all cards will be removed.
 	 */
