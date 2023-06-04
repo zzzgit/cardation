@@ -15,12 +15,13 @@ module.exports = {
 	},
 	plugins: [
 		replace({
-			NODE_ENV: JSON.stringify(process.env.NODE_ENV === "production" ? "production" : "develop"),
+			NODE_ENV: JSON.stringify(
+				process.env.NODE_ENV === "production" ? "production" : "develop"
+			),
 		}),
 		typescript({
 			cacheDir: "./.rts2_cache",
-			compilerOptions: {"module": "ESNext"},
+			compilerOptions: {module: "ESNext"},
 		}),
 	],
-
 }
