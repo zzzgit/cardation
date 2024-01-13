@@ -1,23 +1,23 @@
-import CardError from "../../error/CardError"
+import CardError from '../../error/CardError'
 
 /**
  * Internal use only
  */
-class CardImage {
+class CardImage{
 	private _suit
 
 	private _rank
 
 	private _point
 
-	constructor(id: string) {
+	constructor(id: string){
 		const id_regexp = /^[a-zA-Z]\d{1,3}\.\d{1,4}$/
-		if (!id_regexp.test(id)) {
+		if (!id_regexp.test(id)){
 			throw new CardError(
-				`[CardId][constructor]: the format of id should match /^[a-zA-Z]\\d{1,3}\\.\\d{1,4}$/!`
+				'[CardId][constructor]: the format of id should match /^[a-zA-Z]\\d{1,3}\\.\\d{1,4}$/!'
 			)
 		}
-		const info_array = id.split(".")
+		const info_array = id.split('.')
 		const [firstPart] = info_array
 		const type: string = firstPart.slice(0, 1)
 		const rank: number = +firstPart.slice(1)
@@ -36,15 +36,15 @@ class CardImage {
 		this._point = point
 	}
 
-	getType(): string {
+	getType(): string{
 		return this._suit
 	}
 
-	getRank(): number {
+	getRank(): number{
 		return this._rank
 	}
 
-	getPoint(): number {
+	getPoint(): number{
 		return this._point
 	}
 }

@@ -1,11 +1,11 @@
-import Card from "../card/Card"
-import Collection from "./Collection"
+import Card from '../card/Card'
+import Collection from './Collection'
 
 /**
  *
  * Abstract father class for all collection.
  */
-abstract class Deck extends Collection {
+abstract class Deck extends Collection{
 	/**
 	 * Create an array of cards for the deck, if already exist, return the array.
 	 * @param {Card[]} cards

@@ -1,9 +1,9 @@
-import {CustomError} from "ts-custom-error"
+import { CustomError } from 'ts-custom-error'
 
-class CardError extends CustomError {
-	constructor(message?: string) {
+class CardError extends CustomError{
+	constructor(message?: string){
 		super(message)
-		this.message = "[cardation]" + message
+		this.message = '[cardation]' + message
 	}
 }
 export default CardError

@@ -1,18 +1,18 @@
-import Suit from "./Suit"
+import Suit from './Suit'
 
-class Heart extends Suit {
-	private readonly _id: string = "SUIT_HEART"
+class Heart extends Suit{
+	private readonly _id: string = 'SUIT_HEART'
 
-	getId(): string {
+	getId(): string{
 		return this._id
 	}
 
-	getShortName(): string {
-		return "h"
+	getShortName(): string{
+		return 'h'
 	}
 
-	getIcon(): string {
-		return "♥"
+	getIcon(): string{
+		return '♥'
 	}
 }
 

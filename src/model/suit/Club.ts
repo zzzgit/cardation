@@ -1,18 +1,18 @@
-import Suit from "./Suit"
+import Suit from './Suit'
 
-class Club extends Suit {
-	private _id: string = "SUIT_CLUB"
+class Club extends Suit{
+	private _id: string = 'SUIT_CLUB'
 
-	getId(): string {
+	getId(): string{
 		return this._id
 	}
 
-	getShortName(): string {
-		return "c"
+	getShortName(): string{
+		return 'c'
 	}
 
-	getIcon(): string {
-		return "♣"
+	getIcon(): string{
+		return '♣'
 	}
 }
 

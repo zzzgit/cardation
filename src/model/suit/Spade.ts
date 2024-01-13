@@ -1,18 +1,18 @@
-import Suit from "./Suit"
+import Suit from './Suit'
 
-class Spade extends Suit {
-	private _id: string = "SUIT_SPADE"
+class Spade extends Suit{
+	private _id: string = 'SUIT_SPADE'
 
-	getId(): string {
+	getId(): string{
 		return this._id
 	}
 
-	getShortName(): string {
-		return "s"
+	getShortName(): string{
+		return 's'
 	}
 
-	getIcon(): string {
-		return "♠"
+	getIcon(): string{
+		return '♠'
 	}
 }
 

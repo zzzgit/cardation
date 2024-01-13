@@ -1,23 +1,23 @@
-import Suit from "../suit/Suit"
-import CardError from "../../error/CardError"
-import SuitCard from "./SuitCard"
-import Rank from "../rank/Rank"
+import Suit from '../suit/Suit'
+import CardError from '../../error/CardError'
+import SuitCard from './SuitCard'
+import Rank from '../rank/Rank'
 
-class AceCard extends SuitCard {
+class AceCard extends SuitCard{
 	private _suit: Suit
 
 	private _rank: number
 
 	private _point: number
 
-	constructor(suit: Suit, point?: number) {
+	constructor(suit: Suit, point?: number){
 		super()
 		this._suit = suit
 		this._rank = Rank.A
-		if (point === undefined) {
+		if (point === undefined){
 			this._point = this._rank
 		} else {
-			if (Number.isNaN(+point as any)) {
+			if (Number.isNaN(+point as any)){
 				throw new CardError(
 					`[AceCard][constructor]: point is expected to be a number but get the type ${typeof point}!`
 				)
@@ -26,27 +26,27 @@ class AceCard extends SuitCard {
 		}
 	}
 
-	getCardId(): string {
+	getCardId(): string{
 		return `${this._suit.getShortName()}${this._rank}.${this._point}`
 	}
 
-	getPoint(): number {
+	getPoint(): number{
 		return this._point
 	}
 
-	setPoint(point: number): void {
+	setPoint(point: number): void{
 		this._point = point
 	}
 
-	getRank(): number {
+	getRank(): number{
 		return this._rank
 	}
 
-	getCardSuit(): Suit {
+	getCardSuit(): Suit{
 		return this._suit
 	}
 
-	toString(): string {
+	toString(): string{
 		return `${this._suit.getIcon()}A`
 	}
 }

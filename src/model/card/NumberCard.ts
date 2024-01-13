@@ -1,28 +1,28 @@
-import CardError from "../../error/CardError"
-import Suit from "../suit/Suit"
-import SuitCard from "./SuitCard"
+import CardError from '../../error/CardError'
+import Suit from '../suit/Suit'
+import SuitCard from './SuitCard'
 
-class NumberCard extends SuitCard {
+class NumberCard extends SuitCard{
 	private _suit: Suit
 
 	private _point: number
 
 	private _rank: number
 
-	constructor(suit: Suit, rank: number, point?: number) {
+	constructor(suit: Suit, rank: number, point?: number){
 		super()
 		this._suit = suit
 		rank = +rank
-		if (rank < 2 || rank > 10) {
+		if (rank < 2 || rank > 10){
 			throw new CardError(
-				`[NumberCard][constructor]: rank should be in the range from 2 to 10!`
+				'[NumberCard][constructor]: rank should be in the range from 2 to 10!'
 			)
 		}
 		this._rank = rank
-		if (point === undefined) {
+		if (point === undefined){
 			this._point = this._rank
 		} else {
-			if (Number.isNaN(+point as any)) {
+			if (Number.isNaN(+point as any)){
 				throw new CardError(
 					`[NumberCard][constructor]: point is expected to be a number but get the type ${typeof point}!`
 				)
@@ -31,27 +31,27 @@ class NumberCard extends SuitCard {
 		}
 	}
 
-	getCardId(): string {
+	getCardId(): string{
 		return `${this._suit.getShortName()}${this._rank}.${this._point}`
 	}
 
-	getPoint(): number {
+	getPoint(): number{
 		return this._point
 	}
 
-	getRank(): number {
+	getRank(): number{
 		return this._rank
 	}
 
-	getCardSuit(): Suit {
+	getCardSuit(): Suit{
 		return this._suit
 	}
 
-	setPoint(point: number): void {
+	setPoint(point: number): void{
 		this._point = point
 	}
 
-	toString(): string {
+	toString(): string{
 		return `${this._suit.getIcon()}${this._rank}`
 	}
 }

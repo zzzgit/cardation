@@ -1,4 +1,4 @@
-import Card from "../card/Card"
+import Card from '../card/Card'
 
 /**
  * A collection of cards.

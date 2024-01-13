@@ -1,19 +1,19 @@
-import CardError from "../../error/CardError"
-import Card from "../card/Card"
-import IPattern from "./IPattern"
+import CardError from '../../error/CardError'
+import Card from '../card/Card'
+import IPattern from './IPattern'
 
-class Pair implements IPattern {
+class Pair implements IPattern{
 	/**
 	 * Test if the cards form a pair.
 	 * @param {Card[]} cards cards to be tested
 	 * @returns {boolean} true if the cards form a pair
 	 */
-	static isPair(cards: Card[]): boolean {
-		if (cards.length !== 2) {
+	static isPair(cards: Card[]): boolean{
+		if (cards.length !== 2){
 			return false
 		}
 		const [firstCard] = cards
-		if (firstCard.getRank() !== cards[1].getRank()) {
+		if (firstCard.getRank() !== cards[1].getRank()){
 			return false
 		}
 		return true
@@ -21,22 +21,22 @@ class Pair implements IPattern {
 
 	private _cards: Card[]
 
-	constructor(cards: Card[]) {
-		if (cards.length !== 2) {
+	constructor(cards: Card[]){
+		if (cards.length !== 2){
 			throw new CardError(
-				`[Pair][constructor]: there must be two cards to form a pair!`
+				'[Pair][constructor]: there must be two cards to form a pair!'
 			)
 		}
 		const [firstCard] = cards
-		if (!firstCard.equals(cards[1])) {
+		if (!firstCard.equals(cards[1])){
 			throw new CardError(
-				`[Pair][constructor]: the two cards must be identical to form a pair!`
+				'[Pair][constructor]: the two cards must be identical to form a pair!'
 			)
 		}
 		this._cards = [...cards]
 	}
 
-	getCards(): Card[] {
+	getCards(): Card[]{
 		return [...this._cards]
 	}
 }

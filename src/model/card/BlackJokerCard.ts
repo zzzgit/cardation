@@ -1,20 +1,20 @@
-import CardError from "../../error/CardError"
-import Rank from "../rank/Rank"
-import JokerCard from "./JokerCard"
+import CardError from '../../error/CardError'
+import Rank from '../rank/Rank'
+import JokerCard from './JokerCard'
 
-class BlackJokerCard extends JokerCard {
+class BlackJokerCard extends JokerCard{
 	private _rank: number
 
 	private _point: number = 10
 
-	constructor(rank: number = Rank.BlackJoker, point?: number) {
+	constructor(rank: number = Rank.BlackJoker, point?: number){
 		super()
 		this._rank = rank
 		this._point = this._rank
-		if (point === undefined) {
+		if (point === undefined){
 			this._point = this._rank
 		} else {
-			if (Number.isNaN(+point as any)) {
+			if (Number.isNaN(+point as any)){
 				throw new CardError(
 					`[BlackCardCard][constructor]: point is expected to be a number but get the type ${typeof point}!`
 				)
@@ -23,24 +23,24 @@ class BlackJokerCard extends JokerCard {
 		}
 	}
 
-	getCardId(): string {
+	getCardId(): string{
 		return `j${this._rank}.${this._point}`
 	}
 
-	getPoint(): number {
+	getPoint(): number{
 		return this._point
 	}
 
-	getRank(): number {
+	getRank(): number{
 		return this._rank
 	}
 
-	setPoint(point: number): void {
+	setPoint(point: number): void{
 		this._point = point
 	}
 
-	toString(): string {
-		return "🃏"
+	toString(): string{
+		return '🃏'
 	}
 }
 

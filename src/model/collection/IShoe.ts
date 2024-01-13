@@ -1,5 +1,5 @@
-import Card from "../card/Card"
-import ICollection from "./ICollection"
+import Card from '../card/Card'
+import ICollection from './ICollection'
 
 /**
  * A shoe is a collection of cards.

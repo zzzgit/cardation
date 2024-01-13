@@ -1,4 +1,4 @@
-import Suit from "../suit/Suit"
+import Suit from '../suit/Suit'
 
 /**
  * not in use

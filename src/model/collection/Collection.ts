@@ -1,16 +1,16 @@
-import Persistence from "../../tool/Persistence"
-import Card from "../card/Card"
-import ICollection from "./ICollection"
+import Persistence from '../../tool/Persistence'
+import Card from '../card/Card'
+import ICollection from './ICollection'
 
 /**
  *
  * Abstract class for all collection which implements the serialize method.
  *
  */
-abstract class Collection implements ICollection {
+abstract class Collection implements ICollection{
 	private _cardArray: Card[] = []
 
-	getCardArray(): Card[] {
+	getCardArray(): Card[]{
 		return this._cardArray
 	}
 
@@ -19,15 +19,15 @@ abstract class Collection implements ICollection {
 	 * @param index where to insert
 	 * @param cards the cards to be inserted
 	 */
-	insertCard(index: number, ...cards: Card[]): void {
+	insertCard(index: number, ...cards: Card[]): void{
 		this.getCardArray().splice(index, 0, ...cards)
 	}
 
-	getDuplicatedCardArray(): Card[] {
+	getDuplicatedCardArray(): Card[]{
 		return [...this._cardArray]
 	}
 
-	getLength(): number {
+	getLength(): number{
 		return this.getCardArray().length
 	}
 
@@ -36,16 +36,16 @@ abstract class Collection implements ICollection {
 	 * @param card card to be push in
 	 * @todo avoid duplicate card object in a collection
 	 */
-	pushCard(...card: Card[]): void {
+	pushCard(...card: Card[]): void{
 		this._cardArray.push(...card)
 	}
 
-	includes(card: Card): boolean {
+	includes(card: Card): boolean{
 		const cardArray = this.getDuplicatedCardArray()
 		return cardArray.find((element) => card.equals(element)) ? true : false
 	}
 
-	serialize(): string {
+	serialize(): string{
 		return Persistence.serialize(this)
 	}
 }

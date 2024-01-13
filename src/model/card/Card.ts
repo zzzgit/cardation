@@ -1,5 +1,5 @@
 // super class of all kinds of cards
-abstract class Card {
+abstract class Card{
 	/**
 	 * Get the card's rank which is game independent.
 	 * (ranks are 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 and 100 200)
@@ -26,7 +26,7 @@ abstract class Card {
 	 * @param {Card} other
 	 * @returns {boolean}
 	 */
-	equals(other: Card): boolean {
+	equals(other: Card): boolean{
 		return this.getCardId() == other.getCardId()
 	}
 }
