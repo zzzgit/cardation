@@ -1,7 +1,7 @@
 {
 	"compilerOptions": {
-		"target": "ESNext",
-		"module": "commonjs",
+		"target": "ESNext", // 輸出語言
+		"module": "ESNext", // 輸出模塊
 		"lib": [
 			"esnext"
 		],
@@ -29,7 +29,7 @@
 		"noImplicitReturns": true,
 		"allowSyntheticDefaultImports": true,
 		"esModuleInterop": false,
-		// "rootDir": "./", 導致tsc 編譯的文件夾結構：built/lib/src/...
+		// "rootDir": "./", 
 		"experimentalDecorators": true,
 		"resolveJsonModule": true,
 	},
