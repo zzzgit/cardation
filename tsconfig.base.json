@@ -1,7 +1,7 @@
 {
 	"compilerOptions": {
 		"target": "ESNext", // 輸出語言
-		"module": "ESNext", // 輸出模塊
+		"module": "CommonJS", // 輸出模塊
 		"lib": [
 			"esnext"
 		],
