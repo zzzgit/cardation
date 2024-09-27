@@ -1,6 +1,7 @@
 import CardError from '../../error/CardError'
 import Suit from '../suit/Suit'
 import SuitCard from './SuitCard'
+import { getGraph } from '../serialization/utils'
 
 class NumberCard extends SuitCard{
 	private _suit: Suit
@@ -53,6 +54,13 @@ class NumberCard extends SuitCard{
 
 	toString(): string{
 		return `${this._suit.getIcon()}${this._rank}`
+	}
+	/**
+     * Convert the card to a colored string, which can be printed to the console.
+     * @returns {string}
+     */
+	getGraph(): string{
+		return getGraph(this)
 	}
 }
 

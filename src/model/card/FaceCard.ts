@@ -1,6 +1,7 @@
 import CardError from '../../error/CardError'
 import Suit from '../suit/Suit'
 import SuitCard from './SuitCard'
+import { getGraph } from '../serialization/utils'
 
 const notationMap: {[key: string]: number} = {
 	j: 11,
@@ -71,6 +72,13 @@ class FaceCard extends SuitCard{
 
 	toString(): string{
 		return `${this._suit.getIcon()}${notationArray[this._rank]}`
+	}
+	/**
+	 * Convert the card to a colored string, which can be printed to the console.
+	 * @returns {string}
+	 */
+	getGraph(): string{
+		return getGraph(this)
 	}
 }
 
