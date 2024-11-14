@@ -1,6 +1,7 @@
 import Suit from './Suit'
 
 class Diamond extends Suit{
+
 	private _id: string = 'SUIT_DIAMOND'
 
 	getId(): string{
@@ -14,6 +15,7 @@ class Diamond extends Suit{
 	getIcon(): string{
 		return '♦'
 	}
+
 }
 
 export default Diamond

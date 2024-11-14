@@ -1,6 +1,7 @@
 import Suit from './Suit'
 
 class Club extends Suit{
+
 	private _id: string = 'SUIT_CLUB'
 
 	getId(): string{
@@ -14,6 +15,7 @@ class Club extends Suit{
 	getIcon(): string{
 		return '♣'
 	}
+
 }
 
 export default Club

@@ -39,13 +39,16 @@ import Rank from './model/rank/Rank'
 /**
  * namespace for this lib, not in use
  */
-const Cardation: {[key: string]: any} = {
+const Cardation = {
 	// readonly
 	__initailized: false,
 	__descriptor: {
-		configurable: false, // 不可刪除
-		enumerable: true, // 可讀
-		writable: false, // 不可修改
+		// 不可刪除
+		configurable: false,
+		// 可讀
+		enumerable: true,
+		// 不可修改
+		writable: false,
 	},
 	initialize: function(): number{
 		if (this.__initailized){
@@ -59,6 +62,7 @@ export default Cardation
 
 export { CardError }
 export {
+
 	Card,
 	AceCard,
 	BlackJokerCard,
@@ -71,14 +75,14 @@ export {
 	RedJokerCard,
 }
 export {
-	Collection, Deck, Hand, ICollection, IShoe, Shoe
+	Collection, Deck, Hand, ICollection, IShoe, Shoe,
 }
 export {
-	Flush, IPattern, Pair
+	Flush, IPattern, Pair,
 }
 // export {CardImage}
 export { Rank }
 export {
-	Club, Diamond, Heart, Spade, Suit
+	Club, Diamond, Heart, Spade, Suit,
 }
 export { CardFactory, Persistence }

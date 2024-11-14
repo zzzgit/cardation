@@ -3,6 +3,7 @@ import Card from '../card/Card'
 import IPattern from './IPattern'
 
 class Pair implements IPattern{
+
 	/**
 	 * Test if the cards form a pair.
 	 * @param {Card[]} cards cards to be tested
@@ -23,15 +24,11 @@ class Pair implements IPattern{
 
 	constructor(cards: Card[]){
 		if (cards.length !== 2){
-			throw new CardError(
-				'[Pair][constructor]: there must be two cards to form a pair!'
-			)
+			throw new CardError('[Pair][constructor]: there must be two cards to form a pair!')
 		}
 		const [firstCard] = cards
 		if (!firstCard.equals(cards[1])){
-			throw new CardError(
-				'[Pair][constructor]: the two cards must be identical to form a pair!'
-			)
+			throw new CardError('[Pair][constructor]: the two cards must be identical to form a pair!')
 		}
 		this._cards = [...cards]
 	}
@@ -39,6 +36,7 @@ class Pair implements IPattern{
 	getCards(): Card[]{
 		return [...this._cards]
 	}
+
 }
 
 export default Pair

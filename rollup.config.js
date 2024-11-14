@@ -1,6 +1,6 @@
 import path from 'path'
 import { fileURLToPath } from 'url'
-import pkg from './package.json' assert { type: 'json' }
+import pkg from './package.json' with { type: 'json' }
 import typescript from '@rollup/plugin-typescript'
 
 const __filename = fileURLToPath(import.meta.url)
@@ -11,7 +11,8 @@ export default {
 	output: {
 		file: path.resolve(__dirname, pkg.main),
 		// dir: 'built',
-		format: 'commonjs', // 輸出格式
+		// 輸出格式
+		format: 'commonjs',
 		name: 'cardation',
 		chunkFileNames: '[name].aaa.js',
 		banner: '/* eslint-disable */',
@@ -21,7 +22,8 @@ export default {
 		typescript({
 			cacheDir: './.rts2_cache',
 			compilerOptions: {
-				module: 'ESNext', // 輸入格式
+				// 輸入格式
+				module: 'ESNext',
 				// outDir: './built/lib/',
 				declarationDir: 'built/t',
 			},

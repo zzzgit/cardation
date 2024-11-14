@@ -1,6 +1,7 @@
 import Suit from './Suit'
 
 class Heart extends Suit{
+
 	private readonly _id: string = 'SUIT_HEART'
 
 	getId(): string{
@@ -14,6 +15,7 @@ class Heart extends Suit{
 	getIcon(): string{
 		return '♥'
 	}
+
 }
 
 export default Heart

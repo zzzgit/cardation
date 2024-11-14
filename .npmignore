@@ -24,7 +24,8 @@ src
 test
 *.config.js
 permission.sh
-.eslintrc.yml
+eslint.config.js
+eslint.config.mjs
 tsconfig.*
 .versionrc
 *.tsbuildinfo

@@ -8,6 +8,7 @@ import ICollection from './ICollection'
  *
  */
 abstract class Collection implements ICollection{
+
 	private _cardArray: Card[] = []
 
 	getCardArray(): Card[]{
@@ -42,12 +43,13 @@ abstract class Collection implements ICollection{
 
 	includes(card: Card): boolean{
 		const cardArray = this.getDuplicatedCardArray()
-		return cardArray.find((element) => card.equals(element)) ? true : false
+		return cardArray.find(element=> card.equals(element)) ? true : false
 	}
 
 	serialize(): string{
 		return Persistence.serialize(this)
 	}
+
 }
 
 export default Collection

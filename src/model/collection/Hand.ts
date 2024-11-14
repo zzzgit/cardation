@@ -7,6 +7,7 @@ import Collection from './Collection'
  * @todo 可以考慮再做一個IHand
  */
 class Hand extends Collection{
+
 	/**
 	 * Form a hand from a card array.
 	 * @param hands
@@ -14,7 +15,7 @@ class Hand extends Collection{
 	 */
 	static from(...hands: Hand[]): Hand{
 		const allCards: Card[] = []
-		hands.forEach((hand: Hand) => {
+		hands.forEach((hand: Hand)=> {
 			const cardArray = hand.getDuplicatedCardArray()
 			allCards.push(...cardArray)
 		})
@@ -27,9 +28,7 @@ class Hand extends Collection{
 			this.pushCard(...cardArray)
 		}
 		if (cardArray instanceof Card){
-			throw new CardError(
-				'[Hand][constructor]: Card is not acceptable as a parameter here!'
-			)
+			throw new CardError('[Hand][constructor]: Card is not acceptable as a parameter here!')
 		}
 	}
 
@@ -90,6 +89,7 @@ class Hand extends Collection{
 	clear(): void{
 		this.getCardArray().length = 0
 	}
+
 }
 
 export default Hand

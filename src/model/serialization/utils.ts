@@ -1,4 +1,4 @@
-import * as chalk from 'chalk'
+// import * as chalk from 'chalk'
 import Suit from '../suit/Suit'
 import Heart from '../suit/Heart'
 import Diamond from '../suit/Diamond'
@@ -17,15 +17,17 @@ import MarkerCard from '../card/MarkerCard'
  * @param card A SuitCard instance 
  * @returns Colored string which can show in console
  */
-const getGraph = (card: Card): string=>{
+const getGraph = (card: Card): string=> {
 	const line1 = '┌─────┐'
 	const line5 = '\n└─────┘'
-	let line2, line3, line4
-	// eslint-disable-next-line @typescript-eslint/ban-types
-	let colorise: Function = (str: string)=>str
+	let line2,
+		line3,
+		line4
+	const colorise: (str: string) => string = (str: string)=> str
 	const rank = card.getRank()
 	let score = rank + ''
 	if(card instanceof MarkerCard){
+		/* eslint-disable no-useless-assignment */
 		line2 = '\n│     |'
 		line4 = '\n│     |'
 		line3 = '\n│  M  │'
@@ -34,7 +36,8 @@ const getGraph = (card: Card): string=>{
 		line2 = '\n│     |'
 		line4 = '\n│     |'
 		if(card instanceof RedJokerCard){
-			colorise = chalk.red
+
+			// colorise = chalk.red
 		}else{
 			// colorise = (str: string)=>str
 		}
@@ -55,7 +58,8 @@ const getGraph = (card: Card): string=>{
 		}
 		const suit = (card as SuitCard).getCardSuit().getShortName()
 		if(suit === 'h' || suit === 'd'){
-			colorise = chalk.red
+
+			// colorise = chalk.red
 		}
 		const coloredNumber = colorise(score)
 		const coloredSuit = colorise(short2char_map[(card as SuitCard).getCardSuit().getShortName()])
@@ -90,9 +94,7 @@ const short2char_map: {[key: string]: string} = {
 function parseCardFromId(id: string): Card{
 	const id_regexp = /^[a-zA-Z]\d{1,3}\.\d{1,4}$/
 	if (!id_regexp.test(id)){
-		throw new CardError(
-			'[utils][parseCardFromId]: the format of id should match /^[a-zA-Z]\\d{1,3}\\.\\d{1,4}$/!'
-		)
+		throw new CardError('[utils][parseCardFromId]: the format of id should match /^[a-zA-Z]\\d{1,3}\\.\\d{1,4}$/!')
 	}
 	const info_array = id.split('.')
 	const [firstPart] = info_array
@@ -133,5 +135,5 @@ export {
 	getGraph,
 	short2entity_map,
 	short2char_map,
-	parseCardFromId
+	parseCardFromId,
 }

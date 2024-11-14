@@ -1,4 +1,0 @@
-extends: ["janus/jest"]
-parserOptions:
-    ecmaVersion: "latest"
-    project: "./test/tsconfig.json"

@@ -6,6 +6,7 @@ import { parseCardFromId } from '../model/serialization/utils'
  * A serialization tool for decks.
  */
 class Persistence{
+
 	static serialize(coll: ICollection): string{
 		const cards = coll.getDuplicatedCardArray()
 		let hash = ''
@@ -24,6 +25,7 @@ class Persistence{
 		}
 		return result
 	}
+
 }
 
 export default Persistence

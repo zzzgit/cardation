@@ -5,6 +5,7 @@ import Rank from '../rank/Rank'
 import { getGraph } from '../serialization/utils'
 
 class AceCard extends SuitCard{
+
 	private _suit: Suit
 
 	private _rank: number
@@ -18,12 +19,10 @@ class AceCard extends SuitCard{
 		if (point === undefined){
 			this._point = this._rank
 		} else {
-			if (Number.isNaN(+point as any)){
-				throw new CardError(
-					`[AceCard][constructor]: point is expected to be a number but get the type ${typeof point}!`
-				)
+			if (Number.isNaN(+point)){
+				throw new CardError(`[AceCard][constructor]: point is expected to be a number but get the type ${typeof point}!`)
 			}
-			this._point = +point as any
+			this._point = +point
 		}
 	}
 
@@ -50,6 +49,7 @@ class AceCard extends SuitCard{
 	toString(): string{
 		return `${this._suit.getIcon()}A`
 	}
+
 	/**
      * Convert the card to a colored string, which can be printed to the console.
      * @returns {string}
@@ -57,6 +57,7 @@ class AceCard extends SuitCard{
 	getGraph(): string{
 		return getGraph(this)
 	}
+
 }
 
 export default AceCard

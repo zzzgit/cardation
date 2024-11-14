@@ -4,6 +4,7 @@ import SuitCard from './SuitCard'
 import { getGraph } from '../serialization/utils'
 
 class NumberCard extends SuitCard{
+
 	private _suit: Suit
 
 	private _point: number
@@ -15,20 +16,16 @@ class NumberCard extends SuitCard{
 		this._suit = suit
 		rank = +rank
 		if (rank < 2 || rank > 10){
-			throw new CardError(
-				'[NumberCard][constructor]: rank should be in the range from 2 to 10!'
-			)
+			throw new CardError('[NumberCard][constructor]: rank should be in the range from 2 to 10!')
 		}
 		this._rank = rank
 		if (point === undefined){
 			this._point = this._rank
 		} else {
-			if (Number.isNaN(+point as any)){
-				throw new CardError(
-					`[NumberCard][constructor]: point is expected to be a number but get the type ${typeof point}!`
-				)
+			if (Number.isNaN(+point)){
+				throw new CardError(`[NumberCard][constructor]: point is expected to be a number but get the type ${typeof point}!`)
 			}
-			this._point = +point as any
+			this._point = +point
 		}
 	}
 
@@ -55,6 +52,7 @@ class NumberCard extends SuitCard{
 	toString(): string{
 		return `${this._suit.getIcon()}${this._rank}`
 	}
+
 	/**
      * Convert the card to a colored string, which can be printed to the console.
      * @returns {string}
@@ -62,6 +60,7 @@ class NumberCard extends SuitCard{
 	getGraph(): string{
 		return getGraph(this)
 	}
+
 }
 
 export default NumberCard

@@ -17,26 +17,26 @@ const club = new Club()
 const heart = new Heart()
 const shoe = new Shoe()
 
-describe('shoe.ts', () => {
-	test('clear', () => {
+describe('shoe.ts', ()=> {
+	test('clear', ()=> {
 		shoe.clear()
 		shoe.pushCard(acecard)
 		shoe.pushCard(facecard)
 		shoe.clear()
 		return expect(shoe.getDuplicatedCardArray()).toHaveLength(0)
 	})
-	test('pushCard', () => {
+	test('pushCard', ()=> {
 		shoe.clear()
 		shoe.pushCard(acecard)
 		shoe.pushCard(facecard)
 		return expect(shoe.getDuplicatedCardArray()).toHaveLength(2)
 	})
-	test('pushDeck', () => {
+	test('pushDeck', ()=> {
 		shoe.clear()
 		// shoe.pushDeck(new Shoe())
 		return expect(shoe.getDuplicatedCardArray()).toHaveLength(0)
 	})
-	test('deal', () => {
+	test('deal', ()=> {
 		shoe.clear()
 		shoe.pushCard(acecard)
 		shoe.pushCard(facecard)
@@ -45,7 +45,7 @@ describe('shoe.ts', () => {
 		const [card] = cards
 		return expect(card).toEqual(acecard)
 	})
-	test('cut', () => {
+	test('cut', ()=> {
 		shoe.clear()
 		shoe.pushCard(facecard)
 		shoe.pushCard(acecard)
@@ -57,7 +57,7 @@ describe('shoe.ts', () => {
 		const [card] = shoe.deal()
 		return expect(card.getCardId()).toBe('c3.3')
 	})
-	test('shuffle', () => {
+	test('shuffle', ()=> {
 		shoe.clear()
 		shoe.pushCard(facecard)
 		shoe.pushCard(acecard)
@@ -65,11 +65,15 @@ describe('shoe.ts', () => {
 			const c = CardFactory.createNumberCard(club, i)
 			shoe.pushCard(c)
 		}
+		for (let i = 2; i < 8; i++){
+			const c = CardFactory.createNumberCard(heart, i)
+			shoe.pushCard(c)
+		}
 		shoe.shuffle()
 		const [card] = shoe.deal()
 		return expect(card.getCardId()).not.toBe('c4.4')
 	})
-	test('getDuplicatedCardArray', () => {
+	test('getDuplicatedCardArray', ()=> {
 		shoe.clear()
 		shoe.pushCard(facecard)
 		shoe.pushCard(acecard)
@@ -80,7 +84,7 @@ describe('shoe.ts', () => {
 		const arr = shoe.getDuplicatedCardArray()
 		return expect(arr).toHaveLength(8)
 	})
-	test('getCardArray', () => {
+	test('getCardArray', ()=> {
 		shoe.clear()
 		shoe.pushCard(facecard)
 		shoe.pushCard(acecard)
@@ -94,8 +98,8 @@ describe('shoe.ts', () => {
 	})
 })
 
-describe('collection.ts', () => {
-	test('insertCard', () => {
+describe('collection.ts', ()=> {
+	test('insertCard', ()=> {
 		const hand = new Hand()
 		hand.pushCard(facecard)
 		hand.pushCard(acecard)
@@ -105,7 +109,7 @@ describe('collection.ts', () => {
 		expect(hand.getCardArray()).toHaveLength(5)
 		return expect(hand.getDuplicatedCardArray()[2].getCardId()).toBe('c8.8')
 	})
-	test('pushCard', () => {
+	test('pushCard', ()=> {
 		const hand = new Hand()
 		hand.pushCard(CardFactory.createNumberCard(club, 3))
 		hand.pushCard(CardFactory.createNumberCard(club, 4))
@@ -113,18 +117,18 @@ describe('collection.ts', () => {
 		hand.pushCard(facecard, acecard)
 		return expect(hand.getCardArray()).toHaveLength(5)
 	})
-	test('includes', () => {
+	test('includes', ()=> {
 		const hand = new Hand()
 		hand.pushCard(facecard)
 		hand.pushCard(acecard)
 		return expect(hand.includes(facecard)).toBeTruthy()
 	})
-	test('includes false', () => {
+	test('includes false', ()=> {
 		const hand = new Hand()
 		hand.pushCard(facecard)
 		return expect(hand.includes(acecard)).toBeFalsy()
 	})
-	test('serialize', () => {
+	test('serialize', ()=> {
 		const hand = new Hand()
 		hand.pushCard(facecard)
 		hand.pushCard(acecard)
@@ -133,22 +137,22 @@ describe('collection.ts', () => {
 	})
 })
 
-describe('hand.ts', () => {
-	test('getFirstCard', () => {
+describe('hand.ts', ()=> {
+	test('getFirstCard', ()=> {
 		const hand = new Hand()
 		hand.pushCard(facecard)
 		hand.pushCard(acecard)
 		const card = hand.getFirstCard()
 		return expect(card).toEqual(facecard)
 	})
-	test('getLastCard', () => {
+	test('getLastCard', ()=> {
 		const hand = new Hand()
 		hand.pushCard(facecard)
 		hand.pushCard(acecard)
 		const card = hand.getLastCard()
 		return expect(card).toEqual(acecard)
 	})
-	test('clear', () => {
+	test('clear', ()=> {
 		const hand = new Hand()
 		hand.pushCard(facecard)
 		hand.pushCard(acecard)
@@ -156,14 +160,14 @@ describe('hand.ts', () => {
 		return expect(hand.getCardArray()).toHaveLength(0)
 	})
 })
-describe('flush.ts', () => {
-	test('isFlush', () => {
+describe('flush.ts', ()=> {
+	test('isFlush', ()=> {
 		const a = CardFactory.createAceCard(club)
 		const b = CardFactory.createNumberCard(club, 2)
 		const c = CardFactory.createNumberCard(club, 3)
 		return expect(Flush.isFlush([a, b, c])).toBeTruthy()
 	})
-	test('getSuit', () => {
+	test('getSuit', ()=> {
 		const a = CardFactory.createAceCard(club)
 		const b = CardFactory.createNumberCard(club, 2)
 		const c = CardFactory.createNumberCard(club, 3)
@@ -171,8 +175,8 @@ describe('flush.ts', () => {
 		return expect(flush.getSuit()).toEqual(club)
 	})
 })
-describe('pair.ts', () => {
-	test('isPair', () => {
+describe('pair.ts', ()=> {
+	test('isPair', ()=> {
 		const b = CardFactory.createNumberCard(club, 2)
 		const c = CardFactory.createNumberCard(heart, 2)
 		return expect(Pair.isPair([b, c])).toBeTruthy()

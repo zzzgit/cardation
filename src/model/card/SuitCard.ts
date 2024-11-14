@@ -6,11 +6,13 @@ import Card from './Card'
  * Jonker doesn't belong to any suit.
  */
 abstract class SuitCard extends Card{
+
 	/**
 	 * 4 suits: heart, diamond, spade and club.
 	 * @returns {Suit}
 	 */
 	abstract getCardSuit(): Suit
+
 }
 
 export default SuitCard

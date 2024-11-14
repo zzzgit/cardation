@@ -3,6 +3,7 @@ import Rank from '../rank/Rank'
 import JokerCard from './JokerCard'
 
 class BlackJokerCard extends JokerCard{
+
 	private _rank: number
 
 	private _point: number = 10
@@ -14,12 +15,10 @@ class BlackJokerCard extends JokerCard{
 		if (point === undefined){
 			this._point = this._rank
 		} else {
-			if (Number.isNaN(+point as any)){
-				throw new CardError(
-					`[BlackCardCard][constructor]: point is expected to be a number but get the type ${typeof point}!`
-				)
+			if (Number.isNaN(+point)){
+				throw new CardError(`[BlackCardCard][constructor]: point is expected to be a number but get the type ${typeof point}!`)
 			}
-			this._point = +point as any
+			this._point = +point
 		}
 	}
 
@@ -42,6 +41,7 @@ class BlackJokerCard extends JokerCard{
 	toString(): string{
 		return '🃏'
 	}
+
 }
 
 export default BlackJokerCard
