@@ -21,11 +21,8 @@ test
 .DS_Store
 .husky
 src
-test
 *.config.js
 permission.sh
-eslint.config.js
-eslint.config.mjs
 tsconfig.*
 .versionrc
 *.tsbuildinfo
